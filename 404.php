@@ -7,7 +7,7 @@
  * @package uxrennes
  */
 
-header("HTTP/1.1 301 Moved Permanently");
+header("HTTP/1.1 302 Moved Temporarily");
 header("Location: ".get_bloginfo('url'));
 exit();
 

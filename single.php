@@ -7,7 +7,11 @@
  * @package uxrennes
  */
 
-get_header(); ?>
+header("HTTP/1.1 302 Moved Temporarily");
+header("Location: ".get_bloginfo('url'));
+exit();
+
+/*get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -30,4 +34,4 @@ get_header(); ?>
 		</main>
 	</div>
 
-<?php get_footer(); ?>
+<?php get_footer();*/ ?>
