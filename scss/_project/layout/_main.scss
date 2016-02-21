@@ -11,8 +11,8 @@
 
 		@include mq(desktop)
 		{
-			padding-right: smash-size(smash-grid-cols-width(3) + $smash-gutter);
-			padding-bottom: smash-size($smash-lh*3, 'em');
+			//padding-right: smash-size(smash-grid-cols-width(3) + $smash-gutter);
+			padding-bottom: smash-size($smash-lh*2, 'em');
 		}
 	}
 }

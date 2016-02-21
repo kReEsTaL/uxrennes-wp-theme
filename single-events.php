@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single events.
  *
- * @package uxrennes-theme
+ * @package uxrennes
  */
 
 get_header(); ?>
@@ -14,14 +14,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'template-parts/content', 'events' ); ?>
 
-			<?php the_post_navigation(); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+			<?php //the_post_navigation(); ?>
 
 		<?php endwhile; // End of the loop. ?>
 

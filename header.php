@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package uxrennes-theme
+ * @package uxrennes
  */
 
 $html_class = ' uxr-layout-full';
@@ -50,34 +50,45 @@ $body_class = ' uxr-layout-full';
 		
 		<!--[if lte IE 8]>
 		<div id="no-ie8">
-			<p class="browserupgrade"><p class="browserupgrade"><?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>', 'rm'); ?></p>
+			<p class="browserupgrade"><p class="browserupgrade">
+				<?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>', 'uxrennes'); ?>
+			</p>
 		</div>
 		<![endif]-->
 
 		<div id="page" class="hfeed site uxr-layout-full_container">
 
-			<?php if (is_home() || is_front_page()) : 
-				get_template_part('template-parts/header', 'latest-event');
-			endif; ?>
+			<a class="skip-link screen-reader-text" href="#content">
+				<?php esc_html_e( 'Skip to content', 'uxrennes' ); ?>
+			</a>
 
-			<?php /*
-			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'uxrennes-theme' ); ?></a>
+			<header id="masthead" class="uxr-site-header" role="banner">
+				<div class="uxr-site-header_inside">
+					<div class="uxr-grid-container">
+						<div class="site-branding">
+							<?php if ( is_front_page() || is_home() ) : ?>
+								<h1 class="uxr-site-header_logo">
+									<a href="<?php echo home_url('/'); ?>" rel="home">
+										<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-uxrennes.svg" width="121" height="121" alt="UX Rennes" data-pin-nopin="true" />
+									</a>
+								</h1>
+							<?php else : ?>
+								<p class="uxr-site-header_logo">
+									<a href="<?php echo home_url('/'); ?>" rel="home">
+										<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-uxrennes.svg" width="121" height="121" alt="UX Rennes" data-pin-nopin="true" />
+									</a>
+								</p>
+							<?php endif; ?>
+						</div>
 
-			<header id="masthead" class="site-header" role="banner">
-				<div class="site-branding">
-					<?php if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif; ?>
-					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+						<?php /*
+						<nav id="site-navigation" class="main-navigation" role="navigation">
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'uxrennes' ); ?></button>
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+						</nav>
+						*/ ?>
+					</div>
 				</div>
-
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'uxrennes-theme' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-				</nav>
 			</header>
-			*/ ?>
 
 			<div id="content" class="site-content uxr-layout-full_row uxr-layout-full_row-content">

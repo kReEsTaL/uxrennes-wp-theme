@@ -1,15 +1,15 @@
+#, fuzzy
 msgid ""
 msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: UX Rennes\n"
 "POT-Creation-Date: 2016-02-21 18:21+0100\n"
-"PO-Revision-Date: 2016-02-21 18:22+0100\n"
+"PO-Revision-Date: 2016-01-30 15:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -25,401 +25,365 @@ msgstr ""
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Une réaction sur &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s réaction sur &laquo;&nbsp;%2$s&nbsp;&raquo;"
+msgstr[0] ""
+msgstr[1] ""
 
 #: comments.php:40 comments.php:61
 msgid "Comment navigation"
-msgstr "Navigation parmi les commentaires"
+msgstr ""
 
 #: comments.php:43 comments.php:64
 msgid "Older Comments"
-msgstr "Commentaires précédents"
+msgstr ""
 
 #: comments.php:44 comments.php:65
 msgid "Newer Comments"
-msgstr "Commentaires suivants"
+msgstr ""
 
 #: comments.php:77
 msgid "Comments are closed."
-msgstr "Les commentaires sont fermés."
+msgstr ""
 
 #: footer.php:23
 msgid "Follow us"
-msgstr "Envie de nous suivre ?"
+msgstr ""
 
 #: footer.php:25
 msgid "Did you enjoy this?"
-msgstr "Ça vous a plu ?"
+msgstr ""
 
 #: functions.php:74
 msgid "Primary Menu"
-msgstr "Menu principal"
+msgstr ""
 
 #: functions.php:116
 msgid "Sidebar"
-msgstr "Colonne latérale"
+msgstr ""
 
 #: header.php:54
 msgid ""
 "You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
 "browsehappy.com/\">upgrade your browser</a> to improve your experience.</p>"
 msgstr ""
-"Vous utilisez un navigateur <strong>obsolète</strong>. Veuillez <a "
-"href=« %s »>mettre à jour votre navigateur</a> pour améliorer votre "
-"navigation."
 
 #: header.php:62
 msgid "Skip to content"
-msgstr "Aller au contenu"
+msgstr ""
 
 #: inc/cpt-events.php:13 inc/cpt-events.php:25
 msgid "Events"
-msgstr "Événements"
+msgstr ""
 
 #: inc/cpt-events.php:14
 msgid "Event"
-msgstr "Évènement"
+msgstr ""
 
 #: inc/cpt-events.php:15 inc/cpt-places.php:15 inc/cpt-talks.php:15
 msgid "Add new"
-msgstr "Ajouter"
+msgstr ""
 
 #: inc/cpt-events.php:16
 msgid "Add new event"
-msgstr "Ajouter un nouvel évènement"
+msgstr ""
 
 #: inc/cpt-events.php:17
 msgid "Edit event"
-msgstr "Modifier l’évènement…"
+msgstr ""
 
 #: inc/cpt-events.php:18
 msgid "New event"
-msgstr "Nouvel évènement"
+msgstr ""
 
 #: inc/cpt-events.php:19
 msgid "All events"
-msgstr "Tous les évènements"
+msgstr ""
 
 #: inc/cpt-events.php:20
 msgid "View event"
-msgstr "Voir l’événement"
+msgstr ""
 
 #: inc/cpt-events.php:21
 msgid "Search events"
-msgstr "Chercher un évènement"
+msgstr ""
 
 #: inc/cpt-events.php:22
 msgid "No event found"
-msgstr "Aucun évènement trouvé"
+msgstr ""
 
 #: inc/cpt-events.php:23
 msgid "No event found in trash"
-msgstr "Aucun évènement trouvé dans la corbeille"
+msgstr ""
 
 #: inc/cpt-events.php:33 inc/cpt-events.php:40
 msgid "events"
-msgstr "evenements"
+msgstr ""
 
 #: inc/cpt-events.php:48
 msgid "Event types"
-msgstr "Types d’événement"
+msgstr ""
 
 #: inc/cpt-events.php:49
 msgid "Event type"
-msgstr "Type d’événement"
+msgstr ""
 
 #: inc/cpt-events.php:55
 msgid "Choose from most used types"
-msgstr "Choisir parmi les types les plus fréquents"
+msgstr ""
 
 #: inc/cpt-events.php:63
 msgid "Event places"
-msgstr "Lieux"
+msgstr ""
 
 #: inc/cpt-events.php:64
 msgid "Event place"
-msgstr "Lieu"
+msgstr ""
 
 #: inc/cpt-events.php:70
 msgid "Choose from most used places"
-msgstr "Choisir parmi les lieux les plus fréquents"
+msgstr ""
 
 #: inc/cpt-events.php:78
 msgid "Sponsors"
-msgstr "Sponsors"
+msgstr ""
 
 #: inc/cpt-events.php:79
 msgid "Sponsor"
-msgstr "Sponsor"
+msgstr ""
 
 #: inc/cpt-events.php:85
 msgid "Choose from regular sponsors"
-msgstr "Choisir parmi les sponsors habituels"
+msgstr ""
 
 #: inc/cpt-places.php:13
 msgid "places"
-msgstr "lieux"
+msgstr ""
 
 #: inc/cpt-places.php:14
 msgid "Place"
-msgstr "Lieu"
+msgstr ""
 
 #: inc/cpt-places.php:16
 msgid "Add new place"
-msgstr "Ajouter un lieu"
+msgstr ""
 
 #: inc/cpt-places.php:17
 msgid "Edit place"
-msgstr "Modifier le lieu"
+msgstr ""
 
 #: inc/cpt-places.php:18
 msgid "New place"
-msgstr "Nouveau lieu"
+msgstr ""
 
 #: inc/cpt-places.php:19
 msgid "All places"
-msgstr "Tous les lieux"
+msgstr ""
 
 #: inc/cpt-places.php:20
 msgid "View place"
-msgstr "Afficher le lieu"
+msgstr ""
 
 #: inc/cpt-places.php:21
 msgid "Search places"
-msgstr "Rechercher un lieu"
+msgstr ""
 
 #: inc/cpt-places.php:22
 msgid "No place found"
-msgstr "Aucun lieu trouvé"
+msgstr ""
 
 #: inc/cpt-places.php:23
 msgid "No place found in trash"
-msgstr "Aucun lieu trouvé dans la corbeille"
+msgstr ""
 
 #: inc/cpt-places.php:25
 msgid "Places"
-msgstr "Lieux"
+msgstr ""
 
 #: inc/cpt-talks.php:13 inc/cpt-talks.php:25
 msgid "Talks"
-msgstr "Interventions"
+msgstr ""
 
 #: inc/cpt-talks.php:14
 msgid "Talk"
-msgstr "Intervention"
+msgstr ""
 
 #: inc/cpt-talks.php:16
 msgid "Add new talk"
-msgstr "Ajouter une intervention"
+msgstr ""
 
 #: inc/cpt-talks.php:17
 msgid "Edit talk"
-msgstr "Modifier l’intervention"
+msgstr ""
 
 #: inc/cpt-talks.php:18
 msgid "New talk"
-msgstr "Nouvelle intervention"
+msgstr ""
 
 #: inc/cpt-talks.php:19
 msgid "All talks"
-msgstr "Toutes les interventions"
+msgstr ""
 
 #: inc/cpt-talks.php:20
 msgid "View talk"
-msgstr "Afficher l'intervention"
+msgstr ""
 
 #: inc/cpt-talks.php:21
 msgid "Search talks"
-msgstr "Rechercher une intervention"
+msgstr ""
 
 #: inc/cpt-talks.php:22
 msgid "No talk found"
-msgstr "Aucune intervention trouvée"
+msgstr ""
 
 #: inc/cpt-talks.php:23
 msgid "No talk found in trash"
-msgstr "Aucune intervention trouvée dans la corbeille"
+msgstr ""
 
 #: inc/cpt-talks.php:33
 msgid "talks"
-msgstr "interventions"
+msgstr ""
 
 #: inc/cpt-talks.php:49
 msgid "Speakers"
-msgstr "Orateurs"
+msgstr ""
 
 #: inc/cpt-talks.php:50
 msgid "Speaker"
-msgstr "Orateur"
+msgstr ""
 
 #: inc/cpt-talks.php:56
 msgid "Choose from most current speakers"
-msgstr "Choisir parmi les orateurs les plus assidus"
+msgstr ""
 
 #: inc/cpt-talks.php:64
 msgid "Talk themes"
-msgstr "Thèmes"
+msgstr ""
 
 #: inc/cpt-talks.php:65
 msgid "Talk theme"
-msgstr "Thème"
+msgstr ""
 
 #: inc/cpt-talks.php:71
 msgid "Choose from most used themes"
-msgstr "Choisir parmi les thèmes les plus courants"
+msgstr ""
 
 #: inc/template-tags.php:29
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr "Publié le %s"
+msgstr ""
 
 #: inc/template-tags.php:34
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr "par %s"
+msgstr ""
 
 #: inc/template-tags.php:51 inc/template-tags.php:57
 msgid ", "
-msgstr ", "
+msgstr ""
 
 #: inc/template-tags.php:53
 #, php-format
 msgid "Posted in %1$s"
-msgstr "Publié dans %1$s"
+msgstr ""
 
 #: inc/template-tags.php:59
 #, php-format
 msgid "Tagged %1$s"
-msgstr "Étiqueté %1$s"
+msgstr ""
 
 #: inc/template-tags.php:65
 msgid "Leave a comment"
-msgstr "Publier un commentaire"
+msgstr ""
 
 #: inc/template-tags.php:65
 msgid "1 Comment"
-msgstr "1 commentaire"
+msgstr ""
 
 #: inc/template-tags.php:65
 msgid "% Comments"
-msgstr "% commentaires"
+msgstr ""
 
 #: inc/template-tags.php:72 template-parts/content-page.php:32
 #, php-format
 msgid "Edit %s"
-msgstr "Modifier %s"
+msgstr ""
 
 #: search.php:18
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Résultats de recherche pour : %s"
+msgstr ""
 
 #: template-parts/content-events.php:68 template-parts/content-home.php:321
 msgid "RSVP on Meetup"
-msgstr "S’inscrire sur Meetup"
+msgstr ""
 
 #: template-parts/content-events.php:112
 msgid "Conference transcript"
-msgstr "Retranscription des conférences"
+msgstr ""
 
 #: template-parts/content-events.php:114
 msgid "Evening program"
-msgstr "Au programme"
+msgstr ""
 
 #: template-parts/content-events.php:205 template-parts/content-home.php:192
 msgid "by"
-msgstr "par"
+msgstr ""
 
 #: template-parts/content-events.php:313
 msgid "Thanks to our sponsors"
-msgstr "Merci à nos sponsors"
+msgstr ""
 
 #: template-parts/content-home.php:311
 msgid "Read the recap"
-msgstr "Lire la retranscription"
+msgstr ""
 
 #: template-parts/content-home.php:346
 msgid "See on Google Maps"
-msgstr "Voir sur Google Maps"
+msgstr ""
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
-msgstr "Aucun résultat"
+msgstr ""
 
 #: template-parts/content-none.php:20
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Prêt à publier votre premier article ? <a href=« %1$s »>Commencez ici</a>."
 
 #: template-parts/content-none.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Rien ne correspond à vos critères de recherche. Veuillez réessayer avec des "
-"mots-clés différents."
 
 #: template-parts/content-none.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Rien n’existe à cette adresse. Mais une recherche pourrait peut-être vous "
-"aider à retrouver votre chemin :"
 
 #: template-parts/content-page.php:21 template-parts/content-single.php:25
 #: template-parts/content.php:34
 msgid "Pages:"
-msgstr "Pages :"
+msgstr ""
 
 #: template-parts/content.php:27
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Continuer la lecture %s <span class=« meta-nav »>&rarr;</span>"
+msgstr ""
 
 #. Theme Name of the plugin/theme
 #. Author of the plugin/theme
 msgid "UX Rennes"
-msgstr "UX Rennes"
+msgstr ""
 
 #. Theme URI of the plugin/theme
 #. Author URI of the plugin/theme
 msgid "http://uxrennes.co"
-msgstr "http://uxrennes.co"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid "UX Rennes very own theme."
-msgstr "Le thème d’UX Rennes."
-
-#~ msgid "events/types"
-#~ msgstr "evenements/types"
-
-#~ msgid "events/places"
-#~ msgstr "evenements/lieux"
-
-#~ msgid "events/type"
-#~ msgstr "evenements/type"
-
-#~ msgid "Oops! That page can&rsquo;t be found."
-#~ msgstr "Cette page n’existe pas."
-
-#~ msgid ""
-#~ "It looks like nothing was found at this location. Maybe try one of the "
-#~ "links below or a search?"
-#~ msgstr ""
-#~ "Rien n’existe à cette adresse. Pourquoi ne pas lancer une nouvelle "
-#~ "recherche ?"
-
-#~ msgid "Most Used Categories"
-#~ msgstr "Catégories les plus utilisées"
-
-#~ msgid "Try looking in the monthly archives. %1$s"
-#~ msgstr "Jetez un œil aux archives mensuelles. %1$s"
-
-#~ msgid "Le thème de base d'UX Rennes."
-#~ msgstr "Le thème de la base d’UX Rennes."
+msgstr ""

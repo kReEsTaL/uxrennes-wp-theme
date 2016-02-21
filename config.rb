@@ -66,7 +66,7 @@ end
 require 'sass-globbing'
 
 # Load Compass Growl
-# begin
-#    require "compass-growl"
-# rescue LoadError
-# end
+begin
+   require "compass-growl"
+rescue LoadError
+end

@@ -1,6 +1,6 @@
 /* # Styles spécifiques au pied de page */
 
-&-footer 
+&-site-footer 
 {
 	background-color: $black;
 	color: $white;	
@@ -88,13 +88,49 @@
 		@include mq(desktop)
 		{
 			padding-top: smash-size($smash-lh*3, 'em');
-			padding-right: smash-size(smash-grid-cols-width(4) + $smash-gutter);
+			
 			padding-bottom: smash-size($smash-lh*3, 'em');
+		}
+	}
+
+	&_content 
+	{
+		@include mq(desktop)
+		{
+			padding-right: smash-size(smash-grid-cols-width(4) + $smash-gutter);
 		}
 	}
 
 	.#{$smash-prefix}-table
 	{
+		input[type="text"],
+		input[type="email"]
+		{
+			@include mq($until: almost_tablet)
+			{
+				border-radius: 30px;
+			}
+			
+			@include mq(almost_tablet)
+			{
+				border-radius: 30px 0 0 30px;
+			}
+		}
+
+		button,
+		input[type="submit"]
+		{
+			@include mq($until: almost_tablet)
+			{
+				border-radius: 30px;
+			}
+			
+			@include mq(almost_tablet)
+			{
+				border-radius: 0 30px 30px 0;
+			}
+		}
+
 		@include mq($until: phablet)
 		{
 			&,

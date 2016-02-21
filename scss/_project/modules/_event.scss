@@ -1,0 +1,44 @@
+/* # Event */
+
+&-event
+{
+	&_subtitle 
+	{
+		max-width: smash-size(780px);
+		
+		@include mq($until: desktop)
+		{
+			margin-bottom: smash-size($smash-lh/-2, 'em', 28px);	
+		}
+		
+		@include mq(desktop)
+		{
+			margin-bottom: smash-size($smash-lh/-2, 'em', 50px);	
+		}
+	}
+
+	&_talk 
+	{
+		&-title 
+		{
+
+		}	
+	}
+
+	&_speaker
+	{
+		&-twitter
+		{
+			@include smash-typo($smash-fs0, 'em');
+			margin-top: smash-size($smash-lh*-1, 'em');
+		}
+	}
+
+	&_sponsors
+	{
+		li 
+		{
+			//margin-bottom: 0;
+		}
+	}
+}

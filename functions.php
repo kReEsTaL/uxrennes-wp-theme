@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package uxrennes-theme
+ * @package uxrennes
  */
 
 /**
@@ -47,9 +47,9 @@ function uxr_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on uxrennes-theme, use a find and replace
-	 * to change 'uxrennes-theme' to the name of your theme in all the template files.
+	 * to change 'uxrennes' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'uxrennes-theme', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'uxrennes', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -71,7 +71,7 @@ function uxr_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'uxrennes-theme' ),
+		'primary' => esc_html__( 'Primary Menu', 'uxrennes' ),
 	) );
 
 	/*
@@ -88,7 +88,7 @@ function uxr_setup() {
 	/**
 	 * Custom image sizes
 	 */
-	//add_image_size('links', 128, 128, true);
+	add_image_size('uxr_speaker_medium', 380, 270, true);
 
 }
 endif; // uxr_setup
@@ -113,7 +113,7 @@ add_action( 'after_setup_theme', 'uxr_content_width', 0 );
  */
 function uxr_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'uxrennes-theme' ),
+		'name'          => esc_html__( 'Sidebar', 'uxrennes' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -204,6 +204,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * Import custom post types
  */
 require get_template_directory() . '/inc/cpt-events.php';
+//require get_template_directory() . '/inc/cpt-places.php';
+require get_template_directory() . '/inc/cpt-talks.php';
 
 /**
  * Disable emojis

@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package uxrennes-theme
+ * @package uxrennes
  */
 
 get_header(); ?>
@@ -48,8 +48,7 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

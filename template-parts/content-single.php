@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package uxrennes-theme
+ * @package uxrennes
  */
 
 ?>
@@ -22,7 +22,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uxrennes-theme' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uxrennes' ),
 				'after'  => '</div>',
 			) );
 		?>

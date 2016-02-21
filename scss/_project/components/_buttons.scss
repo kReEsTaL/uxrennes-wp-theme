@@ -20,6 +20,55 @@
 	}
 }
 
+&-btn 
+{
+	&-alpha 
+	{
+		$fs1: 16px;
+		
+		@include inline-block(top);
+		@include border-radius($smash-lh);
+		background-color: $red;
+		background-image: none;
+		color: $white;
+		
+		@include smash-typo($fs1, 'em', $smash-margin: false);
+		
+		padding: smash-size($smash-lh/3, 'em', $fs1) smash-size($smash-gutter*2, 'em', $fs1);
+		
+		text-transform: uppercase;
+		font-weight: bold;
+		
+		letter-spacing: 0.05em;
+		@include transition(color $smash-transition, background-color $smash-transition);
+		
+		&:focus,
+		&:hover,
+		&:active 
+		{
+			background-color: $black;
+		}
+
+		&:after 
+		{
+			content: '›';
+		}
+
+		.#{$smash-prefix}-page-header &
+		{
+			background-color: $black;
+			
+			&:focus,
+			&:hover,
+			&:active
+			{
+				background-color: $white;
+				color: $red;
+			}
+		}
+	}
+}
+
 /*
 		<button class="xx-btn">Lorem ipsum</button>
 */

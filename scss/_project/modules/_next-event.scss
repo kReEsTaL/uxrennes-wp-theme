@@ -1,0 +1,180 @@
+/* # Next event */
+
+&-next-event
+{
+	$image_width: 380px;
+	
+	&_header
+	{
+		margin: 0 auto smash-size($smash-lh*-1, 'em');
+		
+		@include mq($until: tablet)
+		{
+			max-width: smash-size($image_width, 'em');
+		}
+		
+		@include mq(tablet)
+		{
+			max-width: smash-size($image_width*2 + $smash-gutter, 'em');
+		}
+	}
+
+	&_talks
+	{
+		margin-top: smash-size($smash-lh*1.5, 'em');
+		margin-bottom: 0;
+		text-align: center;
+	}
+
+	&_talk
+	{
+		@include inline-block(top);
+		max-width: smash-size($image_width + $smash-gutter/2); // image width
+		
+		> *:last-child
+		{
+			margin-bottom: 0;
+		}
+		
+		@include mq(tablet)
+		{
+			width: 50%;
+			
+			&:nth-child(odd)
+			{
+				padding-right: smash-size($smash-gutter/2, 'em');
+			}
+
+			&:nth-child(even)
+			{
+				padding-left: smash-size($smash-gutter/2, 'em');
+			}
+			
+		}
+
+		&-title 
+		{
+			margin-bottom: 0;
+			font-weight: bold;
+			color: $black;
+			
+			> * 
+			{
+				display: block;
+			}
+			
+			strong 
+			{
+				$fs1: 30px;
+				position: relative;
+				@include smash-typo($fs1, 'em', $smash-margin: false);
+				
+				&:after 
+				{
+					$height: smash-size(4px);
+					
+					content: '';
+					display: block;
+					width: 33.33%;
+					height: $height;
+					background-color: $black;
+					margin-right: auto;
+					margin-left: auto;
+					
+					margin-top: smash-size($smash-lh/2, 'em', $fs1);
+					margin-bottom: smash-size($smash-lh/2, 'em', $fs1);
+					
+					// $margin: smash-size($smash-lh/2, 'em', $fs1);
+					// @include smash-calc('margin-bottom', '#{$margin}');
+				}
+			}
+
+			span 
+			{
+				
+			}
+		}
+	}
+
+	&_speaker
+	{
+		&-twitter
+		{
+			font-size: .8em;
+			
+			a 
+			{
+				@include background-image(linear-gradient(rgba(#000,0) 93%, rgba($white,1) 93%));
+			}
+		}	
+	}
+
+	&_main 
+	{
+		text-align: center; 
+	}
+
+	&_date 
+	{
+		$fs1: 21px;
+		
+		@include smash-typo($fs1, 'em');
+	}
+
+	&_link 
+	{
+		margin-bottom: smash-size($smash-lh*1.5, 'em');
+		
+		.uxr-page-header &
+		{
+			margin-top: smash-size($smash-lh*1, 'em');
+		}
+
+		a 
+		{
+			background-image: none;
+		}
+
+	}
+
+	&_place 
+	{
+		&::first-line
+		{
+			font-weight: bold;	
+		}
+
+		> * 
+		{
+			margin-bottom: 0;
+		}
+	}
+
+	&_gmaps
+	{
+		a 
+		{
+			background-image: none;
+			
+			&:after 
+			{
+				content: '›';
+			}
+
+			span 
+			{
+				@include background-image(linear-gradient(rgba(#000,0) 98%, $red 98%));
+			}
+
+			&:focus,
+			&:hover,
+			&:active
+			{
+				span 
+				{
+					background-image: none;	
+				}
+			}
+		}
+	}
+}

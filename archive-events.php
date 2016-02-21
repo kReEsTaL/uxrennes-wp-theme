@@ -4,7 +4,7 @@
  *
  * Redirect to the homepage for now
  *
- * @package uxrennes-theme
+ * @package uxrennes
  *
  * @todo Develop a real template for this page
  *

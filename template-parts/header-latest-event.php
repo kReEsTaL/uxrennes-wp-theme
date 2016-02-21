@@ -2,7 +2,7 @@
 /**
  * Display latest event
  *
- * @package uxrennes-theme
+ * @package uxrennes
  */
 
 // http://www.smashingmagazine.com/2012/04/random-redirection-in-wordpress/

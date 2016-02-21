@@ -35,6 +35,11 @@
 			padding-right: smash-size($smash-gutter);
 			padding-left: smash-size($smash-gutter);
 		}
+
+		& + & 
+		{
+			margin-top: smash-size($smash-lh, 'em');
+		}
 	}
 
 /* # Utilitaires */

@@ -5,6 +5,8 @@
 {
 	%uxr-contrib
 	{
+
+
 		.#{headers()}
 		{
 			font-weight: bold; 
@@ -108,7 +110,7 @@
 		
 		ul
 		{
-
+			list-style: disc outside;
 		}
 
 		ol
@@ -288,6 +290,12 @@
 
 &-contrib
 {
+
+	@include mq(wide)
+	{
+		@include smash-typo($smash-fs-wide, 'em', $smash-margin: false);
+	}
+
 	@extend %uxr-contrib;
 	
 	> *:last-child

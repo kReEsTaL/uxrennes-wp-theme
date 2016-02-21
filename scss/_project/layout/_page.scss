@@ -1,0 +1,70 @@
+/* # Page styles */
+
+&-page
+{
+	&-header 
+	{
+		margin-bottom: smash-size($smash-lh*2, 'em');
+		padding-bottom: smash-size($smash-lh*2, 'em');
+		background-color: $red;
+		color: $white;	
+
+		a 
+		{
+			color: inherit;
+			@include background-image(linear-gradient(rgba(#000,0) 98%, rgba($white,1) 98%));
+			
+			&:focus,
+			&:hover,
+			&:active
+			{
+				background-image: none;	
+			}
+		}
+
+		> * > *
+		{
+			margin-bottom: 0 !important;
+		}
+
+		// .#{$smash-prefix}-grid-container
+		// {
+		// 	@include mq($until: desktop)
+		// 	{
+		// 		padding-bottom: smash-size($smash-lh, 'em');
+		// 	}
+
+		// 	@include mq(desktop)
+		// 	{
+		// 		padding-right: smash-size(smash-grid-cols-width(2) + $smash-gutter);
+		// 		padding-bottom: smash-size($smash-lh*2 + $smash-lh/4*3, 'em');
+		// 	}
+		// }
+
+		&_title 
+		{
+			margin-bottom: 0;
+			 
+			em 
+			{
+				display: block;
+				font-weight: bold;
+				color: $black;
+				font-style: normal;
+				text-transform: uppercase;
+				letter-spacing: 0.005em; 
+				margin-bottom: smash-size($smash-lh/4, 'em');
+			}
+
+			span 
+			{
+				color: $black;
+			}
+			
+			.#{$smash-prefix}-important
+			{
+				display: block;
+			}
+		}
+	}
+}

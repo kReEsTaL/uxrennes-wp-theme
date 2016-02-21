@@ -26,38 +26,85 @@
 
 	%uxr-level1
 	{
-		@include smash-typo($smash-h1, 'em');
+		@include mq($until: tablet)
+		{
+			@include smash-typo($smash-h1 - 10px, 'em');
+		}
+
+		@include mq(tablet)
+		{
+			@include smash-typo($smash-h1, 'em');
+		}
 	}
 
 	%uxr-level2
 	{
-		@include smash-typo($smash-h2, 'em');
+		@include mq($until: tablet)
+		{
+			@include smash-typo($smash-h2 - 10px, 'em');
+		}
+
+		@include mq(tablet)
+		{
+			@include smash-typo($smash-h2, 'em');
+		}
 	}
 
 	%uxr-level3
 	{
-		@include smash-typo($smash-h3, 'em');
-		
 		@include mq($until: tablet)
 		{
+			@include smash-typo($smash-h3 - 10px, 'em');
 			line-height: normal;
+		}
+
+		@include mq(tablet)
+		{
+			@include smash-typo($smash-h3, 'em');
 		}
 	}
 
 	%uxr-level4
 	{
-		@include smash-typo($smash-h4, 'em', $smash-margin: false);
-		margin-bottom: smash-size($smash-lh/2, 'em', $smash-h4);
+		@include mq($until: tablet)
+		{
+			$fs1: $smash-h4 - 10px;
+			@include smash-typo($fs1, 'em', $smash-margin: false);
+			margin-bottom: smash-size($smash-lh/2, 'em', $fs1);
+		}
+
+		@include mq(tablet)
+		{
+			$fs1: $smash-h4;
+			@include smash-typo($fs1, 'em', $smash-margin: false);
+			margin-bottom: smash-size($smash-lh/2, 'em', $fs1);
+		}
 	}
 
 	%uxr-level5
 	{
-		@include smash-typo($smash-h5, 'em');
+		@include mq($until: tablet)
+		{
+			@include smash-typo($smash-h5 - 10px, 'em');
+		}
+
+		@include mq(tablet)
+		{
+			@include smash-typo($smash-h5, 'em');
+		}
 	}
 
 	%uxr-level6
 	{
-		@include smash-typo($smash-h6, 'em');
+		@include mq($until: tablet)
+		{
+			@include smash-typo($smash-h6 - 10px, 'em');
+		}
+
+		@include mq(tablet)
+		{
+			@include smash-typo($smash-h6, 'em');
+		}
 	}
 
 	
@@ -70,17 +117,11 @@
 		
 		@include mq($until: tablet)
 		{			
-			// 16px, calculated in em
 			font-size: smash-size($smash-fs-mobile, 'em', $smash-bfs);
 			// line-height is inherited :)
 		}
 
-		@include mq(wide)
-		{
-			// 25px, calculated in em
-			//font-size: smash-size($smash-fs-wide, 'em', $smash-bfs);
-			// line-height is inherited :)
-		}
+		
 	}
 }
 
@@ -114,6 +155,7 @@
 
 &-title
 {
+	&-giant,
 	&-alpha,
 	&-beta 
 	{
@@ -121,6 +163,19 @@
 		text-transform: uppercase;
 		font-weight: normal; 
 		word-spacing: 0.1em;
+	}
+
+	&-giant 
+	{
+		@include mq($until: desktop)
+		{
+			@include smash-typo(45px, 'em');
+		}
+		
+		@include mq(desktop)
+		{
+			@include smash-typo(90px, 'em');
+		}
 	}
 
 	&-alpha 
@@ -138,7 +193,7 @@
 
 	&-beta
 	{
-		max-width: smash-size(700px);
+		//max-width: smash-size(700px);
 		letter-spacing: 0.008em;
 		line-height: 1.2;
 		
