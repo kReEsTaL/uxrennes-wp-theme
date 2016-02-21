@@ -11,6 +11,32 @@
 
 $admin_email = get_option('admin_email', true);
 
+if (is_singular('events')) :
+
+	$event_ID 								= get_the_ID();
+
+	// Date
+	$uxr_event_date 						= get_post_meta($event_ID, 'uxr_event_date', 			true);
+	$uxr_event_time 						= get_post_meta($event_ID, 'uxr_event_time', 			true);
+	if ($uxr_event_time) $uxr_event_time 	= mb_strtolower(esc_html($uxr_event_time));
+
+	// Extraire Y,M,D
+	// @link https://www.gregoirenoyelle.com/acf-creer-une-date-intertionalisable/
+	$y = substr($uxr_event_date, 0, 4);
+	$m = substr($uxr_event_date, 4, 2);
+	$d = substr($uxr_event_date, 6, 2);
+
+	// Créer le format UNIX
+	$time_d = strtotime("{$d}-{$m}-{$y}");
+
+	// Today's date
+	$today_date = date('Y-m-d', time());
+
+	// Event date
+	$event_date = date_i18n('Y-m-d', $time_d);
+
+endif;
+
 ?>
 
 			</div>
@@ -19,7 +45,7 @@ $admin_email = get_option('admin_email', true);
 				<div class="uxr-site-footer_inside">
 					<div class="uxr-grid-container">
 						<h2 class="uxr-title-beta">
-							<?php if (is_home() || is_front_page()) : ?>
+							<?php if (is_home() || is_front_page() || is_singular('events') && $today_date < $event_date ) : ?>
 							<?php _e('Follow us', 'uxrennes'); ?>
 							<?php else : ?>
 							<?php _e('Did you enjoy this?', 'uxrennes'); // Ça vous a plu ? ?>
