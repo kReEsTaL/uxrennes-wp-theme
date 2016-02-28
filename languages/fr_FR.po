@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UX Rennes\n"
-"POT-Creation-Date: 2016-02-21 18:21+0100\n"
-"PO-Revision-Date: 2016-02-21 18:22+0100\n"
+"POT-Creation-Date: 2016-02-28 17:24+0100\n"
+"PO-Revision-Date: 2016-02-28 17:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -44,11 +44,11 @@ msgstr "Commentaires suivants"
 msgid "Comments are closed."
 msgstr "Les commentaires sont fermés."
 
-#: footer.php:23
+#: footer.php:49
 msgid "Follow us"
 msgstr "Envie de nous suivre ?"
 
-#: footer.php:25
+#: footer.php:51
 msgid "Did you enjoy this?"
 msgstr "Ça vous a plu ?"
 
@@ -312,28 +312,27 @@ msgstr "% commentaires"
 msgid "Edit %s"
 msgstr "Modifier %s"
 
-#: search.php:18
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Résultats de recherche pour : %s"
-
 #: template-parts/content-events.php:68 template-parts/content-home.php:321
 msgid "RSVP on Meetup"
 msgstr "S’inscrire sur Meetup"
 
-#: template-parts/content-events.php:112
+#: template-parts/content-events.php:113
 msgid "Conference transcript"
 msgstr "Retranscription des conférences"
 
-#: template-parts/content-events.php:114
+#: template-parts/content-events.php:115
 msgid "Evening program"
 msgstr "Au programme"
 
-#: template-parts/content-events.php:205 template-parts/content-home.php:192
+#: template-parts/content-events.php:213 template-parts/content-home.php:192
 msgid "by"
 msgstr "par"
 
-#: template-parts/content-events.php:313
+#: template-parts/content-events.php:303
+msgid "Links and resources"
+msgstr "Pour en savoir plus"
+
+#: template-parts/content-events.php:377
 msgid "Thanks to our sponsors"
 msgstr "Merci à nos sponsors"
 
@@ -395,6 +394,9 @@ msgstr "http://uxrennes.co"
 #. Description of the plugin/theme
 msgid "UX Rennes very own theme."
 msgstr "Le thème d’UX Rennes."
+
+#~ msgid "Search Results for: %s"
+#~ msgstr "Résultats de recherche pour : %s"
 
 #~ msgid "events/types"
 #~ msgstr "evenements/types"
