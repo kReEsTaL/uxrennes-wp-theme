@@ -78,7 +78,7 @@ $event_date = date_i18n('Y-m-d', $time_d);
 		</div>
 	</header>
 
-	<div class="uxr-main uxr-event_main">
+	<div class="uxr-main uxr-event_main entry-content">
 		<div class="uxr-grid-container">
 
 			<?php 
@@ -135,6 +135,7 @@ $event_date = date_i18n('Y-m-d', $time_d);
 					$uxr_speaker_twitter 			= false;
 					$uxr_speaker_twitter_nickname 	= false;
 					$uxr_speaker_name				= false;
+					$uxr_talk_links					= false;
 
 
 					// Talk title
@@ -184,6 +185,12 @@ $event_date = date_i18n('Y-m-d', $time_d);
 						endif;
 
 					endif;
+
+					// Talk links
+					$uxr_talk_links = get_post_meta($talk_ID, 'uxr_talk_links', true);
+
+
+
 
 
 
@@ -283,14 +290,70 @@ $event_date = date_i18n('Y-m-d', $time_d);
 						 
 								break;
 
+
+								//
+								// Links
+								//
+								case 'links':
+						 
+									$links   = get_post_meta( $talk_ID, 'uxr_talk_transcript_' . $count . '_links', true );
+
+									if ($links) :
+
+										echo '<h4>' . __('Links and resources', 'uxrennes') . '</h4>'."\n";
+										echo '<ul>'."\n";
+
+										for( $i = 0; $i < $links; $i++ ) :
+
+											$link_title 	= esc_html(get_post_meta( $talk_ID, 'uxr_talk_transcript_' . $count . '_links_' . $i . '_title', true ));
+											$link_url 		= esc_url( get_post_meta( $talk_ID, 'uxr_talk_transcript_' . $count . '_links_' . $i . '_url', true ));
+
+											if (isset($link_title) && !empty($link_title) && isset($link_url) && !empty($link_url)) :
+
+												echo '<li><a href="' . $link_url . '" target="_blank">' . $link_title . '</a>';
+
+											endif;
+
+										endfor;
+
+										echo '</ul>';
+
+									endif;
+						 
+								break;
+
 							endswitch;
 
 						endforeach;
 
 					endif;
 
-					?>
 
+					//
+					// TALK LINKS
+					//
+					// if( $uxr_talk_links ) :
+
+					// 	echo '<ul>';
+
+					// 	for( $i = 0; $i < $uxr_talk_links; $i++ ) :
+
+					// 		$link_title 	= esc_html( get_post_meta( $talk_ID, 'uxr_talk_links_' . $i . '_link_title', true ) );
+					// 		$link_url 		= esc_url( get_post_meta( $talk_ID, 'uxr_talk_links_' . $i . '_link_url', true ) );
+
+					// 		if (isset($link_title) && !empty($link_title) && isset($link_url) && !empty($link_url)) :
+
+					// 			echo '<li><a href="' . $link_url . '" target="_blank">' . $link_title . '</a>';
+
+					// 		endif;
+
+					// 	endfor;
+
+					// 	echo '</ul>';
+
+					// endif;
+
+					?>
 				</div>
 
 				<?php endwhile; ?>
