@@ -115,26 +115,40 @@
 	/*
 	Et les images de contenus sont forcées en `block`.
 	*/
-
+	
 	img,
 	audio,
 	canvas,
 	video,
-	svg
+	svg,
+	object,
+	iframe
 	{
 		@include inline-block(top);
+	}
+
+	img,
+	audio,
+	canvas,
+	svg
+	{
 		max-width: 100%;
 		height: auto;
-		
-		.ie9 &
-		{
-			width: 100%;
-		}
+	}
+
+	iframe 
+	{
+		max-width: 100%;	
 	}
 
 	figure
 	{
 		margin: 0;
+	}
+
+	path 
+	{
+		fill: $black;
 	}
 
 	/* # Marges par défaut */

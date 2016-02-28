@@ -290,6 +290,7 @@
 
 &-contrib
 {
+	max-width: smash-size(780px);
 
 	@include mq(wide)
 	{
