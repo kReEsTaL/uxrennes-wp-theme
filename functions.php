@@ -102,7 +102,7 @@ add_action( 'after_setup_theme', 'uxr_setup' );
  * @global int $content_width
  */
 function uxr_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'uxr_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'uxr_content_width', 780 );
 }
 add_action( 'after_setup_theme', 'uxr_content_width', 0 );
 
