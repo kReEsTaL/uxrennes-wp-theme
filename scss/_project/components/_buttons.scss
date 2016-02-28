@@ -28,8 +28,8 @@
 		
 		@include inline-block(top);
 		@include border-radius($smash-lh);
-		background-color: $red;
-		background-image: none;
+		background-color: $black;
+		background-image: none !important;
 		color: $white;
 		
 		@include smash-typo($fs1, 'em', $smash-margin: false);
@@ -42,32 +42,38 @@
 		letter-spacing: 0.05em;
 		@include transition(color $smash-transition, background-color $smash-transition);
 		
-		&:focus,
-		&:hover,
-		&:active 
-		{
-			background-color: $black;
-		}
+		
 
 		&:after 
 		{
 			content: '›';
 		}
 
-		.#{$smash-prefix}-page-header &
+		.is-hover &
+		{
+			background-color: $red;
+		}
+
+		.#{$smash-prefix}-page-header &,
+		.#{$smash-prefix}-block-important &
 		{
 			background-color: $black;
 			
-			&:focus,
-			&:hover,
-			&:active
-			{
-				background-color: $white;
-				color: $red;
-			}
 		}
+
+		.#{$smash-prefix}-page-header .is-hover &,
+		.#{$smash-prefix}-block-important .is-hover &,
+		.#{$smash-prefix}-page-header.is-hover &,
+		.#{$smash-prefix}-block-important.is-hover &
+		{
+			background-color: $white;
+			color: $red;
+		}
+
 	}
 }
+
+
 
 /*
 		<button class="xx-btn">Lorem ipsum</button>
@@ -75,6 +81,33 @@
 
 @at-root 
 {
+	a,
+	button 
+	{
+		&.#{$smash-prefix}-btn-alpha 
+		{
+			&:focus,
+			&:hover,
+			&:active 
+			{
+				background-color: $red;
+			}
+
+			.#{$smash-prefix}-page-header &,
+			.#{$smash-prefix}-block-important &
+			{
+				
+				&:focus,
+				&:hover,
+				&:active
+				{
+					background-color: $white;
+					color: $red;
+				}
+			}
+		}
+	}
+
 	button 
 	{
 		background: none;

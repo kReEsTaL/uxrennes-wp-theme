@@ -43,6 +43,7 @@
 		$(document).ready(function(){
 
 			$('.entry-content').fitVids();
+			$('.js-clickbox').UXRclickBox();
 
 		});
 
@@ -67,7 +68,7 @@
 
 
 		/*  =SLIDER
-		 	@options cf. http://www.woothemes.com/flexslider/
+			@options cf. http://www.woothemes.com/flexslider/
 		----------------------------------------------------------------------------- */
 		// rm.slider = function(){
 
@@ -137,6 +138,129 @@
 		// 	});
 
 		// };
+
+		/**
+		   * CLICKABLE BLOCKS
+		   * @author mhguillaumet
+		   * @param node: node selector
+		   * @return void
+	 
+	 
+		   HTML sample:
+	 
+		   <div class="js-clickbox"> => the box to make entirely clickable
+			   <div class="entry-header">
+				   <h3 class="entry-title">
+					   <a href="http://example.com/" class="js-clickbox_target"> => the link to extend
+						   Titre de l'article
+					   </a>
+				   </h3>
+			   </div>
+			   <div class="entry-summary">
+				   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla neque lectus, porta consequat quam fringilla ac. Nulla ut iaculis orci. Morbi cursus, augue sed imperdiet fringilla, dui dolor porta ipsum, vel gravida mi sapien quis arcu. Nullam convallis velit at risus condimentum porta ac id erat. Vivamus porttitor, nunc nec luctus vulputate, ante mi ultricies lacus, porttitor consectetur neque nunc vel lorem. Donec et dolor et justo convallis eleifend. Maecenas lacinia elit augue, et bibendum nibh dignissim quis. Curabitur ac libero vehicula, tristique urna sit amet, egestas dolor. Sed luctus ipsum id fringilla condimentum.</p>
+			   </div>
+			   <div className="js-clickbox_avoid"> => element which should keep its own click
+				   <p>Curabitur ac <a href="http://example.com">libero vehicula</a>, tristique urna sit amet, egestas dolor. Sed luctus ipsum id fringilla condimentum.</p>
+			   </div>
+		   </div>
+	 
+		   ----------------------------------------------------------------------------- */
+		   $.UXRclickBox = function(node)
+		   {
+			
+			   var jBox            = $(node),
+				   jLink           = jBox.find('.js-clickbox_target').length ? jBox.find('.js-clickbox_target') : jBox.find('a:first-of-type'),
+				   jAvoid          = jBox.find('.js-clickbox_avoid'),
+				   jHoverClass     = 'is-hover',
+				   jActiveClass    = 'is-active';
+	 
+	 
+			   if (jLink.length)
+			   {
+				   var jHref           = jLink.attr('href'),
+					   jTarget         = jLink.attr('target');
+	 
+				   jBox.on('click',function(e)
+				   {
+					   e.preventDefault();
+					   jBox.addClass(jActiveClass);
+						
+					   /** Si c'est un clic + CMD (Mac) ou un clic + CTRL (PC) */
+					   if (jTarget !== undefined)  
+					   {
+						   window.open(jHref);
+					   }
+					   else
+					   {
+						   if(e.metaKey || e.ctrlKey) 
+						   {
+							   window.open(jHref);
+						   }
+						   else
+						   {
+							   window.location = jHref;
+						   }
+					   }
+				   });
+					
+				   jBox.on('mouseenter', function()
+				   {
+					   $(node).removeClass(jHoverClass);
+					   if (!jBox.hasClass(jHoverClass)) jBox.addClass(jHoverClass);
+				   });
+					
+				   jBox.on('mouseleave', function()
+				   {
+					   jBox.removeClass(jHoverClass);
+				   });
+					
+				   jAvoid.on('click',function(e)
+				   {
+					   e.stopPropagation();
+				
+					   /** Si c'est un clic + CMD (Mac) ou un clic + CTRL (PC) */
+					   if(e.metaKey || e.ctrlKey) 
+					   {
+						   window.open($(this).attr('href'));
+					   }
+					   else 
+					   {
+						   window.location = $(this).attr('href');
+					   }
+				   });
+					
+				   jAvoid.on('mouseleave', function()
+				   {
+					   $(node).removeClass(jHoverClass);
+					   if (!jBox.hasClass(jHoverClass)) jBox.addClass(jHoverClass);
+				   });
+				
+				   jAvoid.on('mouseenter', function()
+				   {
+					   jBox.removeClass(jHoverClass);
+				   });
+					
+					
+					
+				   /**
+					   Si jBox contient des éléments jAvoid, on rétablit le clic 
+					   sur les liens et les boutons que ce bloc contient, et on
+					   supprime la classe .hover de jBox.
+				   */
+				   if (jAvoid.length)
+				   {
+					   jAvoid.find('a,button').on('click',function(e)
+					   {
+						   e.stopPropagation();
+					   });
+				   }
+			   }
+		   }
+		   $.fn.UXRclickBox = function(){
+			   return this.each(function(){
+				   (new $.UXRclickBox(this));
+			   });
+		   };
 
 
 		

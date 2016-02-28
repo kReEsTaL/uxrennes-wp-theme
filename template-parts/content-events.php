@@ -106,7 +106,7 @@ $event_date = date_i18n('Y-m-d', $time_d);
 			if ( $talks_query->have_posts() ) : 
 
 			?>
-				<h2 class="uxr-title-beta uxr-event_subtitle">
+				<p class="uxr-title-beta uxr-event_subtitle">
 					<?php
 
 					if ($today_date > $event_date) :
@@ -116,7 +116,7 @@ $event_date = date_i18n('Y-m-d', $time_d);
 					endif;
 
 					?>
-				</h2>
+				</p>
 				<?php 
 
 				while ( $talks_query->have_posts() ) : $talks_query->the_post(); 
@@ -206,7 +206,7 @@ $event_date = date_i18n('Y-m-d', $time_d);
 					//
 
 					if (isset($uxr_talk_title) && !empty($uxr_talk_title)) : ?>
-					<h3 class="uxr-event_talk-title">
+					<h2 class="uxr-event_talk-title">
 						<?php echo wp_kses($uxr_talk_title, array()); ?>
 						<?php if (isset($uxr_speaker_name) && !empty($uxr_speaker_name)) : ?>
 						<span>
@@ -214,7 +214,7 @@ $event_date = date_i18n('Y-m-d', $time_d);
 							<?php echo $uxr_speaker_name; ?>
 						</span>
 						<?php endif; ?>
-					</h3>
+					</h2>
 					<?php if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter)) : ?>
 					<p class="uxr-event_speaker-twitter">
 						<a href="<?php echo esc_url($uxr_speaker_twitter); ?>" target="_blank">
@@ -300,7 +300,7 @@ $event_date = date_i18n('Y-m-d', $time_d);
 
 									if ($links) :
 
-										echo '<h4>' . __('Links and resources', 'uxrennes') . '</h4>'."\n";
+										echo '<h3>' . __('Links and resources', 'uxrennes') . '</h3>'."\n";
 										echo '<ul>'."\n";
 
 										for( $i = 0; $i < $links; $i++ ) :

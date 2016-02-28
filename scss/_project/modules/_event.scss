@@ -42,3 +42,11 @@
 		}
 	}
 }
+
+&-previous-event
+{
+	&_link 
+	{
+		margin-top: smash-size($smash-lh, 'em');
+	}
+}

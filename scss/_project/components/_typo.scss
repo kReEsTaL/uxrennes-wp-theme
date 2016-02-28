@@ -66,19 +66,19 @@
 
 	%uxr-level4
 	{
-		@include mq($until: tablet)
-		{
-			$fs1: $smash-h4 - 10px;
-			@include smash-typo($fs1, 'em', $smash-margin: false);
-			margin-bottom: smash-size($smash-lh/2, 'em', $fs1);
-		}
+		// @include mq($until: tablet)
+		// {
+		// 	$fs1: $smash-h4 - 10px;
+		// 	@include smash-typo($fs1, 'em', $smash-margin: false);
+		// 	margin-bottom: smash-size($smash-lh/2, 'em', $fs1);
+		// }
 
-		@include mq(tablet)
-		{
+		// @include mq(tablet)
+		// {
 			$fs1: $smash-h4;
 			@include smash-typo($fs1, 'em', $smash-margin: false);
 			margin-bottom: smash-size($smash-lh/2, 'em', $fs1);
-		}
+		// }
 	}
 
 	%uxr-level5

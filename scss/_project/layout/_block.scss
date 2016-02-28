@@ -1,0 +1,40 @@
+/* # Page styles */
+
+&-block
+{
+	&-important 
+	{
+		padding-top: smash-size($smash-lh*2, 'em');
+		padding-bottom: smash-size($smash-lh*2, 'em');
+		background-color: $red;
+		
+		&,
+		* 
+		{
+			color: $white;	
+		}
+
+		a 
+		{
+			color: inherit;
+			@include background-image(linear-gradient(rgba(#000,0) 98%, rgba($white,1) 98%));
+			
+			&:focus,
+			&:hover,
+			&:active
+			{
+				background-image: none;	
+			}
+		}
+
+		> * > *:last-child
+		{
+			margin-bottom: 0 !important;
+		}
+
+		& + & 
+		{
+			border-top: 1px solid $white;
+		}
+	}
+}

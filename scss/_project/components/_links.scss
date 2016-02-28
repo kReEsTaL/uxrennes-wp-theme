@@ -13,4 +13,12 @@
 &-link
 {
 	text-align: center;
+	
+	&-block 
+	{
+		display: block;
+		text-decoration: none !important;
+		background: none !important;
+		border-bottom: 0 !important;
+	}
 }
