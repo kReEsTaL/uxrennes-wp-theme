@@ -18,6 +18,7 @@ $uxr_event_sponsors				= get_the_terms($event_ID, 'event_sponsor');
 $uxr_event_tickets				= get_post_meta($event_ID, 'uxr_event_tickets', 		true);
 
 
+
 // Date
 $uxr_event_date 				= get_post_meta($event_ID, 'uxr_event_date', 			true);
 
@@ -89,7 +90,7 @@ $event_date = date_i18n('Y-m-d', $time_d);
 
 			$talks_args = array(
 				'post_type'             => 'talks',
-				'post__in'              => $uxr_event_talks,
+				'post__in'              => array($uxr_event_talks),
 				'ignore_sticky_posts'   => true,
 				'order'                 => 'ASC',
 				'posts_per_page'        => '-1',
@@ -269,14 +270,14 @@ $event_date = date_i18n('Y-m-d', $time_d);
 									if (isset($image_ID) && !empty($image_ID)) :
 
 										// Image source
-										$img_src                = wp_get_attachment_image_url( $image_ID, 'large' );
-										$img_srcset             = wp_get_attachment_image_srcset( $image_ID, 'large' );
-										$img_sizes              = wp_get_attachment_image_sizes( $image_ID, 'large' );
+										$img_src                = wp_get_attachment_image_url( $image_ID, 'uxr_fullwidth' );
+										$img_srcset             = wp_get_attachment_image_srcset( $image_ID, 'uxr_fullwidth' );
+										$img_sizes              = wp_get_attachment_image_sizes( $image_ID, 'uxr_fullwidth' );
 
 										// Image meta
 										$image_meta             = get_posts(array('p' => $image_ID, 'post_type' => 'attachment'));
 										$image_caption          = $image_meta[0]->post_excerpt;
-										$image_more_meta        = wp_get_attachment_metadata($image_ID, 'large');
+										$image_more_meta        = wp_get_attachment_metadata($image_ID, 'uxr_fullwidth');
 
 										echo "\t".'</div>'."\n";
 										echo '</div>'."\n";
