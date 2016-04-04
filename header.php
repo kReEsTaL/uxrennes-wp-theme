@@ -9,8 +9,52 @@
  * @package uxrennes
  */
 
-$html_class = ' uxr-layout-full';
-$body_class = ' uxr-layout-full';
+$html_class 	= ' uxr-layout-full';
+$body_class 	= ' uxr-layout-full';
+$colour_class 	= '';
+$page_ID 		= get_the_ID();
+
+//
+// Get the last event's colour
+//
+$args = array(
+	'post_type' 		=> 'events',
+	'posts_per_page'	=> 1
+);
+
+$query = new WP_Query($args);
+
+if ($query->have_posts()) : 
+
+	while ($query->have_posts()) : $query->the_post();
+
+	
+		$event_ID 		= get_the_ID();
+		$uxr_event_type = get_post_meta($event_ID, 'uxr_event_type', true);
+
+		echo $uxr_event_type;
+
+		if (isset($uxr_event_type) && !empty($uxr_event_type)) :
+
+			$colour_class = ' uxr-colour-' . $uxr_event_type;
+
+		else : 
+
+			$colour_class = ' uxr-colour-uxdeiz';
+
+		endif;
+
+	endwhile;
+
+endif; 
+
+wp_reset_query();
+
+$body_class .= $colour_class;
+
+//
+//
+//
 
 ?><!DOCTYPE html>
 <!--[if lt IE 9]>      <html class="no-js ie8<?php if (isset($html_class) && !empty($html_class)) echo $html_class; ?>" <?php language_attributes(); ?>><![endif]-->

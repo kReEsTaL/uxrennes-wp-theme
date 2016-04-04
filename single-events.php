@@ -5,8 +5,14 @@
  * @package uxrennes
  */
 
-get_header(); ?>
+$post_ID 		= get_the_ID();
+$uxr_event_type = get_post_meta($post_ID, 'uxr_event_type', true);
 
+if (isset($uxr_event_type) && $uxr_event_type == 'uxdeiz') :
+
+	get_header(); 
+
+?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -21,4 +27,16 @@ get_header(); ?>
 		</main>
 	</div>
 
-<?php get_footer(); ?>
+<?php get_footer();
+
+else :
+
+	// Do not print single post for events 
+	// that are not uxdeiz
+	header("HTTP/1.1 301 Moved Permanently");
+	header("Location: ".get_bloginfo('url'));
+	exit();
+
+endif; 
+
+?>

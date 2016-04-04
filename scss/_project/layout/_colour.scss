@@ -1,0 +1,31 @@
+/* # Layout colours */
+
+&-colour
+{
+
+	//
+	// UX DEIZ
+	//
+	&-uxdeiz 
+	{
+		.#{$smash-prefix}-site-header,
+		.#{$smash-prefix}-page-header,
+		&-block
+		{
+			background-color: $red;	
+		}
+	}
+
+	//
+	// AFTERWORK
+	//
+	&-afterwork
+	{
+		.#{$smash-prefix}-site-header,
+		.#{$smash-prefix}-page-header,
+		&-block
+		{
+			background-color: $gold;
+		}
+	}
+}
