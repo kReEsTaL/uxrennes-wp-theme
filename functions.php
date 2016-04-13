@@ -24,7 +24,7 @@ if ( defined('UXR_ENV') && (UXR_ENV === 'PROD' || UXR_ENV === 'PREPROD') ) {
  */
 if ( defined('UXR_ENV') && UXR_ENV === 'DEV' ){
 
-	//add_action('wp_head', 'show_template');
+	add_action('wp_head', 'show_template');
 	function show_template() {
 
 		if (current_user_can('activate_plugins')) :
@@ -88,7 +88,8 @@ function uxr_setup() {
 	/**
 	 * Custom image sizes
 	 */
-	add_image_size('uxr_speaker_medium', 380, 270, true);
+	add_image_size('uxr_speaker_medium', 	380, 270, true);
+	add_image_size('uxr_fullwidth', 		1560, 9999);
 
 }
 endif; // uxr_setup
@@ -156,6 +157,7 @@ function uxr_scripts() {
 	$last_update_js 		= filemtime( get_stylesheet_directory() . '/assets/js/scripts.js' );
 	wp_enqueue_script( 'uxr-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), $last_update_js, true );
 
+
 	// Load the Gravity Forms placeholder polyfill for IE9
     wp_register_script( 'placeholders-polyfill', get_template_directory_uri() . '/assets/components/placeholders-polyfill/placeholders.jquery.min.js', array('jquery'), '3.0.2' );
     wp_script_add_data( 'placeholders-polyfill', 'conditional', 'IE 9' );
@@ -194,6 +196,27 @@ function uxr_add_main_stylesheet_conditional( $tag, $handle ) {
 
 	return $tag;
 }
+
+/**
+ * Load inline JS
+ * @link https://wordpress.org/support/topic/adding-javascript-to-a-single-page
+ */
+function uxr_load_inline_js($pid)
+{
+   if (is_front_page())
+   {
+		// Load the MeetUp button JS on the homepage
+   		if ( defined('UXR_ENV') && (UXR_ENV === 'DEV') )
+   		{
+			echo '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://a248.e.akamai.net/secure.meetupstatic.com/s/script/2012676015776998360572/api/mu.btns.js?id=8nivmb10n47bptfrf6eagcvuj4";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>';
+		}
+		else 
+		{
+			echo '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://a248.e.akamai.net/secure.meetupstatic.com/s/script/2012676015776998360572/api/mu.btns.js?id=lmuu7ijjbie4ekj4dakqouva3j";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>';
+		}
+   }
+}
+add_action( 'wp_footer', 'uxr_load_inline_js' );
 
 /**
  * Custom template tags for this theme.

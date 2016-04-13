@@ -24,7 +24,7 @@
 
 	$uxr_event_theme 						= get_post_meta($event_ID, 'uxr_event_theme', 			true);
 	$uxr_event_theme 						= wp_kses($uxr_event_theme, array( 'span' => array(), 'br' => array() ));
-	$uxr_event_tickets 						= get_post_meta($event_ID, 'uxr_event_tickets', 		true);
+	$uxr_event_rsvp 						= get_post_meta($event_ID, 'uxr_event_tickets', 		true);
 	$uxr_event_type 						= get_post_meta($event_ID, 'uxr_event_type', true);
 
 	// Retrieve talks ID
@@ -161,15 +161,18 @@
 				//
 				// Meetup or recap link
 				//
-				if (isset($uxr_event_tickets) && !empty($uxr_event_tickets)) : 					
+				if (isset($uxr_event_rsvp) && !empty($uxr_event_rsvp)) : 
+
+					$uxr_event_rsvp_id = basename($uxr_event_rsvp);
 
 					if ($today_date < $event_date) :
 					?>
 					<p class="uxr-next-event_link">
-						<a href="<?php echo esc_url($uxr_event_tickets); ?>" class="uxr-btn-alpha" target="_blank">
+						<a href="<?php echo esc_url($uxr_event_rsvp); ?>"<?php if (isset($uxr_event_rsvp_id) && !empty($uxr_event_rsvp_id)) : ?> data-event="<?php echo $uxr_event_rsvp_id; ?>"<?php endif; ?> class="mu-rsvp-btn uxr-btn-alpha" target="_blank">
 							<?php _e('RSVP on Meetup', 'uxrennes'); ?>
 						</a>
 					</p>
+
 					<?php 
 
 					endif;
