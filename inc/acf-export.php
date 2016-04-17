@@ -599,6 +599,24 @@ acf_add_local_field_group(array (
 			'allow_null' => 0,
 			'multiple' => 0,
 		),
+		array (
+			'key' => 'field_5713c06e6aace',
+			'label' => 'Description des UX Deiz',
+			'name' => 'uxr_ux_deiz_desc',
+			'type' => 'wysiwyg',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'basic',
+			'media_upload' => 0,
+		),
 	),
 	'location' => array (
 		array (

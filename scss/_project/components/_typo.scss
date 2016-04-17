@@ -204,7 +204,12 @@
 		@extend %uxr-monoton;
 		line-height: 1;
 		
-		@include mq($until: tablet)
+		@include mq($until: almost_tablet)
+		{
+			font-size: smash-size(45px, 'em');
+		}
+		
+		@include mq(almost_tablet, tablet)
 		{
 			font-size: smash-size(55px, 'em');
 		}
