@@ -12,7 +12,12 @@
  * @package uxrennes
  */
 
-get_header(); ?>
+// Do not print pages for now
+header("HTTP/1.1 301 Moved Permanently");
+header("Location: ".get_bloginfo('url'));
+exit();
+
+/*get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -23,9 +28,9 @@ get_header(); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template.
-					/*if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;*/
+					//if ( comments_open() || get_comments_number() ) :
+						//comments_template();
+					//endif;
 				?>
 
 			<?php endwhile; // End of the loop. ?>
@@ -33,4 +38,4 @@ get_header(); ?>
 		</main>
 	</div>
 
-<?php get_footer(); ?>
+<?php get_footer(); */ ?>
