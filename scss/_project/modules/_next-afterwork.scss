@@ -124,7 +124,7 @@
 		@include mq(tablet, desktop)
 		{
 			$top: $logo_width + $smash-gutter*2;
-			$bottom: $smash-gutter*2;
+			$bottom: $smash-gutter*3;
 			$others: $logo_width/2 + $smash-gutter;
 			padding: smash-size($top) smash-size($others) smash-size($bottom);
 		}
