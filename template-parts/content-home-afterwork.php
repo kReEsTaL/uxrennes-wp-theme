@@ -57,7 +57,8 @@
 			<div class="uxr-next-afterwork_col uxr-next-afterwork_info">
 				<div class="uxr-icon uxr-next-afterwork_icon">
 					<div class="uxr-icon_in-1">
-						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="77px" height="66px" viewBox="0 0 77 66" style="enable-background:new 0 0 77 66;" xml:space="preserve">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" <?php /*x="0px" y="0px" width="77px" height="66px"  style="enable-background:new 0 0 77 66;"*/ ?> viewBox="0 0 77 66"<?php /* xml:space="preserve" preserveAspectRatio="xMidYMid meet"*/ ?>>
+							
 							<g>
 								<path class="st0" d="M59.6,28.8L58.3,26l0,0L59.6,28.8L59.6,28.8z M21.6,30.9c-0.9-0.4-1.9,0-2.3,0.9l-8.5,18.4
 									c-0.4,0.9,0,1.9,0.8,2.3c0.2,0.1,0.5,0.2,0.7,0.2c0.7,0,1.3-0.4,1.6-1l8.5-18.4C22.9,32.3,22.5,31.3,21.6,30.9z M73.7,50.2

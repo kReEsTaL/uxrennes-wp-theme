@@ -4,6 +4,7 @@
 {
 	display: table;
 	table-layout: fixed; 
+	
 	background-color: $white;
 
 	@include mq($until: tablet)
@@ -22,13 +23,21 @@
 	{
 		display: table-cell;
 		vertical-align: middle;
-		padding: smash-size(10px);
 	}
 
 	svg,
 	img
 	{
-		display: block;
-		margin: auto;
+		@include mq($until: tablet)
+		{
+			width: smash-size(60px);
+			height: smash-size(51px);
+		}
+
+		@include mq(tablet)
+		{
+			width: smash-size(77px);
+			height: smash-size(66px);
+		}
 	}
 }
