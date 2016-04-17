@@ -1,6 +1,6 @@
 /* # Layout colours */
 
-&-colour
+&-color
 {
 
 	//
@@ -40,5 +40,14 @@
 		{
 			color: $gold;
 		}
+	}
+
+	//
+	// DARK
+	//
+	&-shadows
+	{
+		background-color: $black;
+		color: $white;
 	}
 }

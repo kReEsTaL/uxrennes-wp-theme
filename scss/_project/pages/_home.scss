@@ -128,3 +128,55 @@
 		}
 	}
 }
+
+&-home 
+{
+	//
+	// ABOUT
+	//
+	&-about 
+	{
+		
+		background-image: image-url('about-bg.jpg');
+		background-size: cover;
+		
+		@include mq($until: tablet)
+		{
+			background-position: 85% 100%;
+		}
+		
+		@include mq(tablet)
+		{
+			background-position: 100% 100%;
+		}
+		
+		@include mq($until: desktop)
+		{
+			padding-top: smash-size($smash-lh*3);
+			padding-bottom: smash-size($smash-lh*6);
+		}
+		
+		@include mq(desktop)
+		{
+			padding-top: smash-size($smash-lh*4);
+			padding-bottom: smash-size($smash-lh*7);
+		}
+		
+		> *,
+		.#{$smash-prefix}-contrib > *
+		{
+			margin-top: 0;
+		}
+
+		h2 
+		{
+			@extend %uxr-monoton;
+			@extend %uxr-beta;
+		}
+
+		p 
+		{
+			max-width: smash-size(740px);
+		}
+	}
+}

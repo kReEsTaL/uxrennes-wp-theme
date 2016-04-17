@@ -31,26 +31,26 @@ acf_add_local_field_group(array (
 			'disabled' => 0,
 		),
 		array (
-			'key' => 'field_56accb82cd5a1',
-			'label' => 'Thématique',
-			'name' => 'uxr_event_theme',
-			'type' => 'text',
-			'instructions' => 'Par exemple : Au cœur de notre quotidien, Je t\'aime moi non plus…<br />
-Utiliser une balise <code>&lt;span&gt;&lt;/span&gt;</code> pour mettre du texte en noir, et une balise <code>&lt;br /&gt;</code> pour forcer un retour à la ligne.',
-			'required' => 0,
+			'key' => 'field_57011fc929e70',
+			'label' => 'Type d\'évènement',
+			'name' => 'uxr_event_type',
+			'type' => 'radio',
+			'instructions' => '',
+			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
+			'choices' => array (
+				'afterwork' => 'Afterwork',
+				'uxdeiz' => 'UX Deiz',
+			),
+			'other_choice' => 0,
+			'save_other_choice' => 0,
 			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-			'readonly' => 0,
-			'disabled' => 0,
+			'layout' => 'horizontal',
 		),
 		array (
 			'key' => 'field_56accbaecd5a2',
@@ -91,13 +91,51 @@ Utiliser une balise <code>&lt;span&gt;&lt;/span&gt;</code> pour mettre du texte 
 			'disabled' => 0,
 		),
 		array (
+			'key' => 'field_56accb82cd5a1',
+			'label' => 'Thématique',
+			'name' => 'uxr_event_theme',
+			'type' => 'text',
+			'instructions' => 'Par exemple : Au cœur de notre quotidien, Je t\'aime moi non plus…<br />
+Utiliser une balise <code>&lt;span&gt;&lt;/span&gt;</code> pour mettre du texte en noir, et une balise <code>&lt;br /&gt;</code> pour forcer un retour à la ligne.',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_57011fc929e70',
+						'operator' => '==',
+						'value' => 'uxdeiz',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+		array (
 			'key' => 'field_56c8a3868d42c',
 			'label' => 'Interventions',
 			'name' => 'uxr_event_talks',
 			'type' => 'relationship',
 			'instructions' => '',
 			'required' => 1,
-			'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_57011fc929e70',
+						'operator' => '==',
+						'value' => 'uxdeiz',
+					),
+				),
+			),
 			'wrapper' => array (
 				'width' => '',
 				'class' => '',
@@ -492,6 +530,30 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
+		array (
+			'key' => 'field_5702c735f937c',
+			'label' => 'Photo',
+			'name' => 'uxr_place_picture',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+			'preview_size' => 'medium',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
 	),
 	'location' => array (
 		array (
@@ -499,6 +561,51 @@ acf_add_local_field_group(array (
 				'param' => 'taxonomy',
 				'operator' => '==',
 				'value' => 'event_place',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'seamless',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
+
+acf_add_local_field_group(array (
+	'key' => 'group_5713b43778d60',
+	'title' => 'Options',
+	'fields' => array (
+		array (
+			'key' => 'field_5713b43a97c97',
+			'label' => 'Page « À propos » du site',
+			'name' => 'uxr_about_page',
+			'type' => 'page_link',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array (
+				0 => 'page',
+			),
+			'taxonomy' => array (
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'theme-options',
 			),
 		),
 	),

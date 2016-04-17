@@ -34,12 +34,12 @@ if ($query->have_posts()) :
 
 		if (isset($uxr_event_type) && !empty($uxr_event_type)) :
 
-			$colour_class = ' uxr-colour-' . $uxr_event_type;
+			$colour_class = ' uxr-color-' . $uxr_event_type;
 			$layout_class = ' uxr-layout-' . $uxr_event_type;
 
 		else : 
 
-			$colour_class = ' uxr-colour-uxdeiz';
+			$colour_class = ' uxr-color-uxdeiz';
 
 		endif;
 

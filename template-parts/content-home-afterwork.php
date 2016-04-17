@@ -10,12 +10,6 @@
 	$uxr_event_title 						= get_post_meta($event_ID, 'uxr_event_title', 			true);
 	$uxr_event_title						= explode('<br />', $uxr_event_title);
 
-	// echo '<pre>';
-	// print_r($uxr_event_title);
-	// echo '<br />';
-	// echo count($uxr_event_title);
-	// echo '</pre>';
-
 	function test_print($item2, $key)
 	{
 		echo "<span class='uxr-next-afterwork_title-block uxr-next-afterwork_title-block-$key'>$item2</span>";
@@ -26,9 +20,6 @@
 	$uxr_event_theme 						= wp_kses($uxr_event_theme, array( 'span' => array(), 'br' => array() ));
 	$uxr_event_rsvp 						= get_post_meta($event_ID, 'uxr_event_tickets', 		true);
 	$uxr_event_type 						= get_post_meta($event_ID, 'uxr_event_type', true);
-
-	// Retrieve talks ID
-	//$uxr_event_talks 						= get_post_meta($event_ID, 'uxr_event_talks', 			true);
 
 	// Date
 	$uxr_event_date 						= get_post_meta($event_ID, 'uxr_event_date', 			true);
@@ -279,5 +270,6 @@
 		</div>
 	</header>
 
+	<?php get_template_part('template-parts/content-home', 'about'); ?>
 	
 </article>

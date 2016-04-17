@@ -107,6 +107,32 @@
 		}
 	}
 
+	%uxr-beta 
+	{
+		letter-spacing: 0.008em;
+		line-height: 1.2;
+		
+		@include mq($until: desktop)
+		{
+			@include smash-typo(28px, 'em');
+			word-spacing: 0;
+			letter-spacing: 0;
+		}
+		
+		@include mq(desktop)
+		{
+			@include smash-typo(50px, 'em');
+		}
+	}
+
+	%uxr-monoton
+	{
+		font-family: $monoton; 
+		text-transform: uppercase;
+		font-weight: normal; 
+		word-spacing: 0.1em;
+	}
+
 	
 
 	body,
@@ -155,19 +181,9 @@
 
 &-title
 {
-	&-so-big,
-	&-giant,
-	&-alpha,
-	&-beta 
-	{
-		font-family: $monoton; 
-		text-transform: uppercase;
-		font-weight: normal; 
-		word-spacing: 0.1em;
-	}
-
 	&-so-big
 	{
+		@extend %uxr-monoton;
 		line-height: 1;
 		
 		@include mq($until: tablet)
@@ -188,6 +204,8 @@
 
 	&-giant 
 	{
+		@extend %uxr-monoton;
+		
 		@include mq($until: desktop)
 		{
 			@include smash-typo(45px, 'em');
@@ -201,6 +219,8 @@
 
 	&-alpha 
 	{
+		@extend %uxr-monoton;
+		
 		@include mq($until: desktop)
 		{
 			@include smash-typo(45px, 'em');
@@ -214,21 +234,8 @@
 
 	&-beta
 	{
-		//max-width: smash-size(700px);
-		letter-spacing: 0.008em;
-		line-height: 1.2;
-		
-		@include mq($until: desktop)
-		{
-			@include smash-typo(28px, 'em');
-			word-spacing: 0;
-			letter-spacing: 0;
-		}
-		
-		@include mq(desktop)
-		{
-			@include smash-typo(50px, 'em');
-		}
+		@extend %uxr-monoton;
+		@extend %uxr-beta;
 	}
 
 	&-gamma 

@@ -24,7 +24,7 @@ if ( defined('UXR_ENV') && (UXR_ENV === 'PROD' || UXR_ENV === 'PREPROD') ) {
  */
 if ( defined('UXR_ENV') && UXR_ENV === 'DEV' ){
 
-	add_action('wp_head', 'show_template');
+	//add_action('wp_head', 'show_template');
 	function show_template() {
 
 		if (current_user_can('activate_plugins')) :
@@ -273,12 +273,6 @@ function uxr_remove_recent_comments_style() {
 
 
 /**
- * Filter Yoast Meta Priority
- */
-add_filter( 'wpseo_metabox_prio', function() { return 'low';});
-
-
-/**
  * TinyMCE: remove the h1 and pre choices from the list
  */
 add_filter('tiny_mce_before_init', 'uxr_myformatTinyMCE' );
@@ -286,6 +280,7 @@ function uxr_myformatTinyMCE($in) {
   $in['block_formats'] = "Paragraph=p;Header 2=h2;Header 3=h3;Header 4=h4;Header 5=h5;Header 6=h6";
   return $in;
 }
+
 
 /*
  * Adds gallery shortcode custom defaults
@@ -350,3 +345,44 @@ function nonBreakableSpaces($text)
 add_filter('the_content', 'nonBreakableSpaces', 15);
 add_filter('the_title', 'nonBreakableSpaces', 15);
 add_filter('comment_text', 'nonBreakableSpaces', 30);	// commentaires
+
+/**
+ * Filter Yoast Meta Priority
+ */
+add_filter( 'wpseo_metabox_prio', function() { return 'low';});
+
+
+/*
+ * Force medium and large images to crop
+ * @link http://wordpress.org/support/topic/force-crop-to-medium-size
+ */
+if(false === get_option("medium_crop"))
+	add_option("medium_crop", "1");
+else
+	update_option("medium_crop", "1");
+
+if(false === get_option("large_crop"))
+	add_option("large_crop", "1");
+else
+	update_option("large_crop", "1");
+
+
+/**
+ * Add an Options page
+ */
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> esc_html__('Theme options', 'rm'),
+		'menu_title'	=> esc_html__('Options', 'rm'),
+		'menu_slug' 	=> 'theme-options',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	// acf_add_options_sub_page(array(
+	// 	'page_title' 	=> esc_html__('Something', 'rm'),
+	// 	'menu_title'	=> esc_html__('Something', 'rm'),
+	// 	'parent_slug'	=> 'theme-options'
+	// ));
+}
