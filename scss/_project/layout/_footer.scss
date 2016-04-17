@@ -9,7 +9,7 @@
 	a 
 	{
 		color: inherit;
-		@include background-image(linear-gradient(rgba(#000,0) 94%, rgba($white,1) 100%));
+		//@include background-image(linear-gradient(rgba(#000,0) 94%, rgba($white,1) 100%));
 		
 		@include mq(tablet)
 		{

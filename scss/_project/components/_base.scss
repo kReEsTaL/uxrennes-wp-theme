@@ -50,7 +50,8 @@
 	{   
 		color: $red;
 		text-decoration: none;
-		@include background-image(linear-gradient(rgba(#000,0) 94%, rgba($red,1) 100%));
+		//@include background-image(linear-gradient(rgba(#000,0) 94%, rgba($red,1) 100%));
+		border-bottom: 1px solid;
 		
 		// Please note: only remove the focus if you DO
 		// provide a visual alternative.
@@ -61,7 +62,8 @@
 		&:hover,
 		&:focus
 		{
-			background: none;
+			//background: none;
+			border-bottom-color: transparent;
 		}
 
 		&:visited
@@ -186,6 +188,30 @@
 	pre 
 	{
 		white-space: pre-wrap;
+	}
+
+	/*
+	# Transitions
+	*/
+
+	a,
+	button,
+	input,
+	textarea,
+	button,
+	select,
+	label,
+	svg,
+	img,
+	span
+	//[tabindex]:not([tabindex="-1"])
+	{
+		@include transition(color $smash-transition, border-color $smash-transition, background-color $smash-transition, opacity $smash-transition);
+	}
+
+	[tabindex="-1"]
+	{
+		outline: none;
 	}
 
 

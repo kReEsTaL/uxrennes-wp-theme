@@ -31,6 +31,7 @@
 		background-color: $black;
 		background-image: none !important;
 		color: $white;
+		border-bottom: 0 !important;
 		
 		@include smash-typo($fs1, 'em', $smash-margin: false);
 		
