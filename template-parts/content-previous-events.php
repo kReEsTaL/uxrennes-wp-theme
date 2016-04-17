@@ -14,7 +14,16 @@ $uxr_ux_deiz_desc = get_option('options_uxr_ux_deiz_desc', true);
 $args = array(
 	'post_type' 		=> 'events',
 	'posts_per_page'	=> 3,
-	'post__not_in'		=> array($event_ID)
+	'post__not_in'		=> array($event_ID),
+
+	// Only display UX Deiz (because afterworks don't have archive pages)
+	'meta_query' => array(
+		array(
+			'key'     => 'uxr_event_type',
+			'value'   => array('uxdeiz'),
+			'compare' => 'IN',
+		),
+	),
 );
 
 $query = new WP_Query($args);
