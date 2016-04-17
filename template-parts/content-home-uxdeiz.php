@@ -26,7 +26,7 @@ if ($query->have_posts()) :
 	$uxr_event_theme 						= get_post_meta($event_ID, 'uxr_event_theme', 			true);
 	$uxr_event_theme 						= wp_kses($uxr_event_theme, array( 'span' => array(), 'br' => array() ));
 	$uxr_event_tickets 						= get_post_meta($event_ID, 'uxr_event_tickets', 		true);
-	$uxr_event_type 						= get_post_meta($post_ID, 'uxr_event_type', true);
+	$uxr_event_type 						= get_post_meta($page_ID, 'uxr_event_type', true);
 
 	// Retrieve talks ID
 	$uxr_event_talks 						= get_post_meta($event_ID, 'uxr_event_talks', 			true);

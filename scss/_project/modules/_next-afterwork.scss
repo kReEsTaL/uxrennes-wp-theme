@@ -31,11 +31,19 @@
 			}
 		}
 
-		@include mq(desktop)
+		@include mq(desktop, wide)
 		{
 			&:first-child 
 			{
 				width: smash-size(650px);
+			}
+		}
+
+		@include mq(wide)
+		{
+			&:first-child 
+			{
+				width: 50%;
 			}
 		}
 	}
@@ -117,7 +125,7 @@
 		{
 			$top: $logo_width_medium + $smash-gutter*2;
 			$bottom: $smash-gutter*2;
-			$others: $logo_width_medium/2 + $smash-gutter;
+			$others: $logo_width_medium/2;
 			padding: smash-size($top) smash-size($others) smash-size($bottom);
 		}
 
