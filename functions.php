@@ -217,7 +217,7 @@ function uxr_load_inline_js($pid)
 		}
    }
 }
-add_action( 'wp_footer', 'uxr_load_inline_js' );
+//add_action( 'wp_footer', 'uxr_load_inline_js' );
 
 /**
  * Custom template tags for this theme.
