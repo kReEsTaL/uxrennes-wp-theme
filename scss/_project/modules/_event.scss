@@ -50,3 +50,11 @@
 		margin-top: smash-size($smash-lh, 'em');
 	}
 }
+
+&-previous-events
+{
+	& + &
+	{
+		border-top: 1px solid $flush;
+	}
+}
