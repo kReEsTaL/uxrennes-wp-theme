@@ -69,4 +69,57 @@
 			margin-bottom: smash-size($smash-lh*2, 'em');
 		}
 	}
+
+
+	//
+	// Afterwork
+	//
+	&-afterwork 
+	{
+		.#{$smash-prefix}-site-header
+		{
+			padding-bottom: 0;
+			
+			&_inside
+			{
+				.#{$smash-prefix}-grid-container 
+				{
+					max-width: none;
+					
+					@include mq($until: desktop)
+					{
+						padding-left: 0;
+					}
+				}
+
+				.#{$smash-prefix}-site-header_logo 
+				{
+					position: absolute;
+					top: 0;
+					
+					img 
+					{
+					}
+
+					@include mq($until: tablet)
+					{
+						margin-left: smash-size($logo_width_medium);
+					}
+
+					@include mq(tablet, desktop)
+					{
+						margin-left: smash-size($logo_width);
+					}
+
+					@include mq(desktop)
+					{
+						left: smash-size($logo_width);
+					}
+					
+				}
+			}
+
+		}	
+	}
+	
 }

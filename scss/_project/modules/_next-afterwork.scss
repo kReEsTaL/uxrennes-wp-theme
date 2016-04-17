@@ -1,0 +1,156 @@
+/* # Next event */
+
+&-next-afterwork
+{
+	position: relative;
+	z-index: 1; 
+
+	&_layout 
+	{
+		@include mq(almost_tablet)
+		{
+			display: table;
+			width: 100%;
+			table-layout: fixed; 
+		}
+	}
+
+	&_col 
+	{
+		@include mq(almost_tablet)
+		{
+			display: table-cell;
+			vertical-align: top; 
+		}
+
+		@include mq(almost_tablet, desktop)
+		{
+			&:first-child 
+			{
+				width: 60%;
+			}
+		}
+
+		@include mq(desktop)
+		{
+			&:first-child 
+			{
+				width: smash-size(650px);
+			}
+		}
+	}
+
+	&_icon 
+	{
+		position: absolute;
+		left: 0;
+		transition: top $smash-transition;
+		
+		@include mq(desktop)
+		{
+			top: smash-size($logo_height, 'em');
+		}
+	}
+
+	&_title 
+	{
+		@include mq(tablet, desktop)
+		{
+			margin-bottom: smash-size($smash-lh - 5px, 'em');
+		}
+		@include mq(desktop)
+		{
+			margin-bottom: smash-size($smash-lh/2, 'em');
+		}
+		
+		&-in,
+		&-block 
+		{
+			display: block;
+		}
+		
+		&-block 
+		{
+			
+			&:first-child 
+			{
+				color: $white;
+			}
+			
+			&:only-child 
+			{
+				color: inherit;
+			}
+		}
+	}
+
+	&_subtitle 
+	{
+	}
+
+	&_date
+	{
+		color: $white;
+	}
+
+	&_info 
+	{
+		text-transform: uppercase;
+		font-weight: bold; 
+		text-align: center;
+		
+		[class*="btn"]
+		{
+			color: $white;
+		}
+	}
+
+	&_content 
+	{
+		> *:last-child,
+		> *:last-child > *:last-child
+		{
+			margin-bottom: 0;
+		}
+
+		@include mq($until: tablet)
+		{
+			$top: $logo_width_medium + $smash-gutter*2;
+			$bottom: $smash-gutter*2;
+			$others: $logo_width_medium/2 + $smash-gutter;
+			padding: smash-size($top) smash-size($others) smash-size($bottom);
+		}
+
+		@include mq(tablet, desktop)
+		{
+			$top: $logo_width + $smash-gutter*2;
+			$bottom: $smash-gutter*2;
+			$others: $logo_width/2 + $smash-gutter;
+			padding: smash-size($top) smash-size($others) smash-size($bottom);
+		}
+
+		@include mq(desktop)
+		{
+			$bottom: $smash-gutter*3;
+			$others: $logo_width + $smash-gutter*2;
+			padding: smash-size($others) smash-size($others) smash-size($bottom);
+		}
+	}
+
+	&_place-picture 
+	{
+		background-size: cover;
+		background-position: 70% 50%;
+		
+		img 
+		{
+			width: 100%;
+			height: auto;
+			
+			@include mq(desktop)
+			{
+				opacity: 0;
+			}
+		}
+	}
+}

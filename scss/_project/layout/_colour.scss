@@ -10,9 +10,16 @@
 	{
 		.#{$smash-prefix}-site-header,
 		.#{$smash-prefix}-page-header,
+		.#{$smash-prefix}-page-block,
 		&-block
 		{
 			background-color: $red;	
+			color: $white;
+		}
+
+		.#{$smash-prefix}-icon
+		{
+			color: $red;
 		}
 	}
 
@@ -23,9 +30,15 @@
 	{
 		.#{$smash-prefix}-site-header,
 		.#{$smash-prefix}-page-header,
+		.#{$smash-prefix}-page-block,
 		&-block
 		{
 			background-color: $gold;
+		}
+
+		.#{$smash-prefix}-icon
+		{
+			color: $gold;
 		}
 	}
 }

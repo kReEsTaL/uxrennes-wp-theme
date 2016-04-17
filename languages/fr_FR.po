@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UX Rennes\n"
-"POT-Creation-Date: 2016-02-28 17:24+0100\n"
-"PO-Revision-Date: 2016-02-28 17:24+0100\n"
+"POT-Creation-Date: 2016-04-17 15:42+0200\n"
+"PO-Revision-Date: 2016-04-17 15:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -56,11 +56,11 @@ msgstr "Ça vous a plu ?"
 msgid "Primary Menu"
 msgstr "Menu principal"
 
-#: functions.php:116
+#: functions.php:118
 msgid "Sidebar"
 msgstr "Colonne latérale"
 
-#: header.php:54
+#: header.php:98
 msgid ""
 "You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
 "browsehappy.com/\">upgrade your browser</a> to improve your experience.</p>"
@@ -69,7 +69,7 @@ msgstr ""
 "href=« %s »>mettre à jour votre navigateur</a> pour améliorer votre "
 "navigation."
 
-#: header.php:62
+#: header.php:106
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
@@ -312,35 +312,48 @@ msgstr "% commentaires"
 msgid "Edit %s"
 msgstr "Modifier %s"
 
-#: template-parts/content-events.php:68 template-parts/content-home.php:321
+#: template-parts/content-events.php:67
+#: template-parts/content-home-afterwork.php:211
+#: template-parts/content-home-uxdeiz.php:322
 msgid "RSVP on Meetup"
 msgstr "S’inscrire sur Meetup"
 
-#: template-parts/content-events.php:113
+#: template-parts/content-events.php:114
 msgid "Conference transcript"
 msgstr "Retranscription des conférences"
 
-#: template-parts/content-events.php:115
+#: template-parts/content-events.php:116
 msgid "Evening program"
 msgstr "Au programme"
 
-#: template-parts/content-events.php:213 template-parts/content-home.php:192
+#: template-parts/content-events.php:214
+#: template-parts/content-home-uxdeiz.php:193
 msgid "by"
 msgstr "par"
 
-#: template-parts/content-events.php:303
+#: template-parts/content-events.php:304
 msgid "Links and resources"
 msgstr "Pour en savoir plus"
 
-#: template-parts/content-events.php:377
+#: template-parts/content-events.php:378
 msgid "Thanks to our sponsors"
 msgstr "Merci à nos sponsors"
 
-#: template-parts/content-home.php:311
+#: template-parts/content-home-afterwork.php:106
+msgid "Previous event"
+msgstr "Évènement précédent"
+
+#: template-parts/content-home-afterwork.php:110
+msgid "Next event"
+msgstr "Prochain évènement"
+
+#: template-parts/content-home-uxdeiz.php:312
+#: template-parts/content-home-uxdeiz.php:452
+#: template-parts/content-home.php:105
 msgid "Read the recap"
 msgstr "Lire la retranscription"
 
-#: template-parts/content-home.php:346
+#: template-parts/content-home-uxdeiz.php:347
 msgid "See on Google Maps"
 msgstr "Voir sur Google Maps"
 

@@ -2,7 +2,8 @@
 
 &-site-header 
 {
-	
+	position: relative;
+	z-index: 2;  
 	background-color: $red;
 	color: $white;
 	
@@ -15,26 +16,6 @@
 	{
 		padding-bottom: smash-size($smash-lh*2, 'em');
 	}
-
-	// a 
-	// {
-	// 	color: inherit;
-	// 	@include background-image(linear-gradient(rgba(#000,0) 98%, rgba($white,1) 98%));
-	// }
-
-	// .#{$smash-prefix}-grid-container
-	// {
-	// 	@include mq($until: desktop)
-	// 	{
-	// 		padding-bottom: smash-size($smash-lh, 'em');
-	// 	}
-
-	// 	@include mq(desktop)
-	// 	{
-	// 		padding-right: smash-size(smash-grid-cols-width(2) + $smash-gutter);
-	// 		padding-bottom: smash-size($smash-lh*2 + $smash-lh/4*3, 'em');
-	// 	}
-	// }
 
 	&_logo 
 	{
@@ -50,36 +31,15 @@
 		{
 			@include mq($until: tablet)
 			{
-				width: smash-size($smash-lh*3.5, 'em');
-				height: smash-size($smash-lh*3.5, 'em');
+				width: smash-size($logo_width_medium);
+				height: smash-size($logo_height_medium);
 			}
 
 			@include mq(tablet)
 			{
-				width: smash-size($smash-lh*4.5, 'em');
-				height: smash-size($smash-lh*4.5, 'em');
+				width: smash-size($logo_width);
+				height: smash-size($logo_height);
 			}
 		}
 	}
-
-	// &_title 
-	// {
-	// 	margin-bottom: 0;
-		 
-	// 	em 
-	// 	{
-	// 		display: block;
-	// 		font-weight: bold;
-	// 		color: $black;
-	// 		font-style: normal;
-	// 		text-transform: uppercase;
-	// 		letter-spacing: 0.005em; 
-	// 		margin-bottom: smash-size($smash-lh/4, 'em');
-	// 	}
-		
-	// 	.#{$smash-prefix}-important
-	// 	{
-	// 		display: block;
-	// 	}
-	// }
 }

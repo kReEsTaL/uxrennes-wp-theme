@@ -88,6 +88,7 @@ function uxr_setup() {
 	/**
 	 * Custom image sizes
 	 */
+	add_image_size('uxr_square', 			650, 650, true);
 	add_image_size('uxr_speaker_medium', 	380, 270, true);
 	add_image_size('uxr_fullwidth', 		1560, 9999);
 

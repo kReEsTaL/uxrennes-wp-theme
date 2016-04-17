@@ -12,6 +12,7 @@
 $html_class 	= ' uxr-layout-full';
 $body_class 	= ' uxr-layout-full';
 $colour_class 	= '';
+$layout_class 	= '';
 $page_ID 		= get_the_ID();
 
 //
@@ -28,15 +29,13 @@ if ($query->have_posts()) :
 
 	while ($query->have_posts()) : $query->the_post();
 
-	
 		$event_ID 		= get_the_ID();
 		$uxr_event_type = get_post_meta($event_ID, 'uxr_event_type', true);
-
-		echo $uxr_event_type;
 
 		if (isset($uxr_event_type) && !empty($uxr_event_type)) :
 
 			$colour_class = ' uxr-colour-' . $uxr_event_type;
+			$layout_class = ' uxr-layout-' . $uxr_event_type;
 
 		else : 
 
@@ -51,6 +50,7 @@ endif;
 wp_reset_query();
 
 $body_class .= $colour_class;
+$body_class .= $layout_class;
 
 //
 //

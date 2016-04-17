@@ -146,9 +146,11 @@
 		margin: 0;
 	}
 
-	path 
+	path,
+	polygon
 	{
-		fill: $black;
+		fill: currentColor;
+		@include transition(fill $smash-transition);
 	}
 
 	/* # Marges par défaut */

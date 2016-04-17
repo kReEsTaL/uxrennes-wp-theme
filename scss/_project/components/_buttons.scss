@@ -27,14 +27,14 @@
 		$fs1: 16px;
 		
 		@include inline-block(top);
-		@include border-radius($smash-lh);
+		//@include border-radius($smash-lh);
 		background-color: $black;
 		background-image: none !important;
 		color: $white;
 		
 		@include smash-typo($fs1, 'em', $smash-margin: false);
 		
-		padding: smash-size($smash-lh/3, 'em', $fs1) smash-size($smash-gutter*2, 'em', $fs1);
+		padding: smash-size($smash-lh/3, 'em', $fs1) smash-size($smash-gutter, 'em', $fs1);
 		
 		text-transform: uppercase;
 		font-weight: bold;
@@ -55,6 +55,7 @@
 		}
 
 		.#{$smash-prefix}-page-header &,
+		.#{$smash-prefix}-page-block &,
 		.#{$smash-prefix}-block-important &
 		{
 			background-color: $black;
@@ -62,12 +63,14 @@
 		}
 
 		.#{$smash-prefix}-page-header .is-hover &,
+		.#{$smash-prefix}-page-block .is-hover &,
 		.#{$smash-prefix}-block-important .is-hover &,
 		.#{$smash-prefix}-page-header.is-hover &,
+		.#{$smash-prefix}-page-block.is-hover &,
 		.#{$smash-prefix}-block-important.is-hover &
 		{
 			background-color: $white;
-			color: $red;
+			color: $black;
 		}
 
 	}
@@ -94,6 +97,7 @@
 			}
 
 			.#{$smash-prefix}-page-header &,
+			.#{$smash-prefix}-page-block &,
 			.#{$smash-prefix}-block-important &
 			{
 				
@@ -102,7 +106,7 @@
 				&:active
 				{
 					background-color: $white;
-					color: $red;
+					color: $black;
 				}
 			}
 		}

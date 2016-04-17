@@ -46,7 +46,7 @@ $mq-breakpoints: (
 	wordpress_admin_bar:  782px
 );
 
-//$mq-show-breakpoints: (mobile, phablet, almost_tablet, tablet, desktop, wide);
+$mq-show-breakpoints: (mobile, phablet, almost_tablet, tablet, desktop, wide);
 
 /* # Grille */
 
@@ -169,3 +169,11 @@ $smash-smaller:   17px !default;
 
 $montserrat: 	'montserrat', sans-serif !default;
 $monoton: 		'monoton',    cursive !default;
+
+/* # Miscellanées */
+
+$logo_width:          121px !default;
+$logo_height:         121px !default;
+
+$logo_width_medium:   84px !default;
+$logo_height_medium:  84px !default;
