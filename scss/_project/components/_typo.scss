@@ -125,6 +125,24 @@
 		}
 	}
 
+	%uxr-delta 
+	{
+		letter-spacing: 0.008em;
+		line-height: 1.2;
+		
+		@include mq($until: desktop)
+		{
+			@include smash-typo(28px, 'em');
+			word-spacing: 0;
+			letter-spacing: 0;
+		}
+		
+		@include mq(desktop)
+		{
+			@include smash-typo(40px, 'em');
+		}
+	}
+
 	%uxr-monoton
 	{
 		font-family: $monoton; 
@@ -261,5 +279,11 @@
 				margin-left: auto;
 			}
 		}
+	}
+
+	&-delta
+	{
+		@extend %uxr-monoton;
+		@extend %uxr-delta;
 	}
 }

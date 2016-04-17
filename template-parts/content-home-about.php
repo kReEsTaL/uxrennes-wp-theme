@@ -15,7 +15,7 @@
 	?>
 	<div class="uxr-home-about uxr-color-shadows">
 		<div class="uxr-grid-container">
-			<div class="uxr-contrib">
+			<div class="uxr-contrib uxr-contrib-limit">
 				<?php echo $content; ?>
 			</div>
 		</div>

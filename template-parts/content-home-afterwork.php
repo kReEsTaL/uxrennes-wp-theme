@@ -6,6 +6,7 @@
  */
 
 	// Retrieve some metadata
+	global $event_ID;
 	$event_ID 								= get_the_ID();
 	$uxr_event_title 						= get_post_meta($event_ID, 'uxr_event_title', 			true);
 	$uxr_event_title						= explode('<br />', $uxr_event_title);

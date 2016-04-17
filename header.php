@@ -32,7 +32,7 @@ if ($query->have_posts()) :
 		$event_ID 		= get_the_ID();
 		$uxr_event_type = get_post_meta($event_ID, 'uxr_event_type', true);
 
-		if (isset($uxr_event_type) && !empty($uxr_event_type)) :
+		if (isset($uxr_event_type) && !empty($uxr_event_type) && is_front_page()) :
 
 			$colour_class = ' uxr-color-' . $uxr_event_type;
 			$layout_class = ' uxr-layout-' . $uxr_event_type;

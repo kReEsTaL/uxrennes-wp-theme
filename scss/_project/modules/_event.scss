@@ -45,16 +45,72 @@
 
 &-previous-event
 {
+	// & + &
+	// {
+	// 	border-top: 1px solid $flush;
+	// }
+
+	// .#{$smash-prefix}-previous-events_intro + &
+	// {
+	// 	border-top: 1px solid $flush;
+	// }
+	
+	* > &:nth-child(odd),
+	.#{$smash-prefix}-previous-events_intro ~ &:nth-child(even)
+	{
+		background-color: $flush;
+	}
+
+	.#{$smash-prefix}-previous-events_intro ~ &:nth-child(odd)
+	{
+		background-color: transparent;
+	}
+
 	&_link 
 	{
 		margin-top: smash-size($smash-lh, 'em');
+		margin-bottom: 0;
+	}
+
+	> .#{$smash-prefix}-grid-container
+	{
+		@include mq($until: tablet)
+		{
+			padding-top: smash-size($smash-lh, 'em');
+			padding-bottom: smash-size($smash-lh, 'em');
+		}
+
+		@include mq(tablet)
+		{
+			padding-top: smash-size($smash-lh*2, 'em');
+			padding-bottom: smash-size($smash-lh*2, 'em');
+		}
 	}
 }
 
 &-previous-events
 {
-	& + &
+	&_intro 
 	{
-		border-top: 1px solid $flush;
+		> .#{$smash-prefix}-grid-container
+		{
+			@include mq($until: tablet)
+			{
+				padding-top: smash-size($smash-lh, 'em');
+				padding-bottom: smash-size($smash-lh, 'em');
+			}
+
+			@include mq(tablet, desktop)
+			{
+				padding-top: smash-size($smash-lh*2, 'em');
+				padding-bottom: smash-size($smash-lh*2, 'em');
+			}
+
+			@include mq(desktop)
+			{
+				padding-top: smash-size($smash-lh*3, 'em');
+				padding-bottom: smash-size($smash-lh*2, 'em');
+			}
+		}
 	}
 }

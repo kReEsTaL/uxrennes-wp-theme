@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UX Rennes\n"
-"POT-Creation-Date: 2016-04-17 15:42+0200\n"
-"PO-Revision-Date: 2016-04-17 15:42+0200\n"
+"POT-Creation-Date: 2016-04-17 18:55+0200\n"
+"PO-Revision-Date: 2016-04-17 18:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -59,6 +59,14 @@ msgstr "Menu principal"
 #: functions.php:118
 msgid "Sidebar"
 msgstr "Colonne latérale"
+
+#: functions.php:376
+msgid "Theme options"
+msgstr "Options du thème"
+
+#: functions.php:377
+msgid "Options"
+msgstr "Options"
 
 #: header.php:98
 msgid ""
@@ -313,8 +321,8 @@ msgid "Edit %s"
 msgstr "Modifier %s"
 
 #: template-parts/content-events.php:67
-#: template-parts/content-home-afterwork.php:211
-#: template-parts/content-home-uxdeiz.php:322
+#: template-parts/content-home-afterwork.php:239
+#: template-parts/content-home-uxdeiz.php:323
 msgid "RSVP on Meetup"
 msgstr "S’inscrire sur Meetup"
 
@@ -327,7 +335,7 @@ msgid "Evening program"
 msgstr "Au programme"
 
 #: template-parts/content-events.php:214
-#: template-parts/content-home-uxdeiz.php:193
+#: template-parts/content-home-uxdeiz.php:194
 msgid "by"
 msgstr "par"
 
@@ -339,21 +347,20 @@ msgstr "Pour en savoir plus"
 msgid "Thanks to our sponsors"
 msgstr "Merci à nos sponsors"
 
-#: template-parts/content-home-afterwork.php:106
+#: template-parts/content-home-afterwork.php:102
 msgid "Previous event"
 msgstr "Évènement précédent"
 
-#: template-parts/content-home-afterwork.php:110
+#: template-parts/content-home-afterwork.php:106
 msgid "Next event"
 msgstr "Prochain évènement"
 
-#: template-parts/content-home-uxdeiz.php:312
-#: template-parts/content-home-uxdeiz.php:452
-#: template-parts/content-home.php:105
+#: template-parts/content-home-uxdeiz.php:313
+#: template-parts/content-previous-events.php:85
 msgid "Read the recap"
 msgstr "Lire la retranscription"
 
-#: template-parts/content-home-uxdeiz.php:347
+#: template-parts/content-home-uxdeiz.php:348
 msgid "See on Google Maps"
 msgstr "Voir sur Google Maps"
 
@@ -389,6 +396,10 @@ msgstr ""
 msgid "Pages:"
 msgstr "Pages :"
 
+#: template-parts/content-previous-events.php:25
+msgid "Our conferences"
+msgstr "Nos conférences"
+
 #: template-parts/content.php:27
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
@@ -407,6 +418,15 @@ msgstr "http://uxrennes.co"
 #. Description of the plugin/theme
 msgid "UX Rennes very own theme."
 msgstr "Le thème d’UX Rennes."
+
+#~ msgid "UX Deiz conferences"
+#~ msgstr "Conférences UX Deiz"
+
+#~ msgid "Previous events"
+#~ msgstr "Derniers évènements"
+
+#~ msgid "Our previous events"
+#~ msgstr "Derniers évènements"
 
 #~ msgid "Search Results for: %s"
 #~ msgstr "Résultats de recherche pour : %s"

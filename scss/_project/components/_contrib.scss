@@ -87,6 +87,11 @@
 		
 		a 
 		{
+			.single &
+			{
+				color: $red;
+			}
+			
 			@include mq($until: tablet)
 			{
 				word-wrap: break-word;
@@ -308,6 +313,14 @@
 	> *:last-child
 	{
 		margin-bottom: 0;
+	}
+
+	&-limit 
+	{
+		p 
+		{
+			max-width: smash-size(740px);
+		}
 	}
 }
 

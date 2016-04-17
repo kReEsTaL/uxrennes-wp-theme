@@ -33,9 +33,10 @@
 		color: $white;
 		border-bottom: 0 !important;
 		
+		//
 		@include smash-typo($fs1, 'em', $smash-margin: false);
-		
 		padding: smash-size($smash-lh/3, 'em', $fs1) smash-size($smash-gutter, 'em', $fs1);
+		//
 		
 		text-transform: uppercase;
 		font-weight: bold;
@@ -50,7 +51,7 @@
 			content: '›';
 		}
 
-		.is-hover &
+		.is-hover &:hover
 		{
 			background-color: $red;
 		}
@@ -58,20 +59,32 @@
 		.#{$smash-prefix}-page-header &,
 		.#{$smash-prefix}-page-block &,
 		.#{$smash-prefix}-block-important &
+		.#{$smash-prefix}-color-blood &
+		.#{$smash-prefix}-color-shadows &
 		{
 			background-color: $black;
 			
 		}
 
-		.#{$smash-prefix}-page-header .is-hover &,
-		.#{$smash-prefix}-page-block .is-hover &,
-		.#{$smash-prefix}-block-important .is-hover &,
-		.#{$smash-prefix}-page-header.is-hover &,
-		.#{$smash-prefix}-page-block.is-hover &,
-		.#{$smash-prefix}-block-important.is-hover &
+		.#{$smash-prefix}-page-header .is-hover &:hover,
+		.#{$smash-prefix}-page-block .is-hover &:hover,
+		.#{$smash-prefix}-block-important .is-hover &:hover,
+		.#{$smash-prefix}-color-blood .is-hover &:hover,
+		.#{$smash-prefix}-color-shadows .is-hover &:hover,
+		.#{$smash-prefix}-page-header.is-hover &:hover,
+		.#{$smash-prefix}-page-block.is-hover &:hover,
+		.#{$smash-prefix}-block-important.is-hover &:hover,
+		.#{$smash-prefix}-color-blood.is-hover &:hover,
+		.#{$smash-prefix}-color-shadows.is-hover &:hover
 		{
 			background-color: $white;
 			color: $black;
+		}
+
+		&-minor 
+		{
+			$fs1: 14px;
+			@include smash-typo($fs1, 'em', $smash-margin: false);
 		}
 
 	}
@@ -99,9 +112,10 @@
 
 			.#{$smash-prefix}-page-header &,
 			.#{$smash-prefix}-page-block &,
-			.#{$smash-prefix}-block-important &
+			.#{$smash-prefix}-block-important &,
+			.#{$smash-prefix}-color-blood &,
+			.#{$smash-prefix}-color-shadows &
 			{
-				
 				&:focus,
 				&:hover,
 				&:active
