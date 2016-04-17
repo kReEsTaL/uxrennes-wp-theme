@@ -27,7 +27,7 @@ if ($query->have_posts()) :
 	<div class="uxr-previous-events_intro">
 		<div class="uxr-grid-container">
 			<h2 class="uxr-title-beta">
-				<?php _e('Our conferences', 'uxrennes'); ?>
+				<?php _e('Our UX conferences', 'uxrennes'); ?>
 			</h2>
 			<?php if (isset($uxr_ux_deiz_desc) && !empty($uxr_ux_deiz_desc)) : ?>
 			<div class="uxr-contrib uxr-contrib-limit">

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UX Rennes\n"
-"POT-Creation-Date: 2016-04-17 18:55+0200\n"
-"PO-Revision-Date: 2016-04-17 18:55+0200\n"
+"POT-Creation-Date: 2016-04-17 19:18+0200\n"
+"PO-Revision-Date: 2016-04-17 19:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -356,7 +356,7 @@ msgid "Next event"
 msgstr "Prochain évènement"
 
 #: template-parts/content-home-uxdeiz.php:313
-#: template-parts/content-previous-events.php:85
+#: template-parts/content-previous-events.php:96
 msgid "Read the recap"
 msgstr "Lire la retranscription"
 
@@ -396,9 +396,9 @@ msgstr ""
 msgid "Pages:"
 msgstr "Pages :"
 
-#: template-parts/content-previous-events.php:25
-msgid "Our conferences"
-msgstr "Nos conférences"
+#: template-parts/content-previous-events.php:30
+msgid "Our UX conferences"
+msgstr "Nos conférences UX"
 
 #: template-parts/content.php:27
 #, php-format
@@ -418,6 +418,9 @@ msgstr "http://uxrennes.co"
 #. Description of the plugin/theme
 msgid "UX Rennes very own theme."
 msgstr "Le thème d’UX Rennes."
+
+#~ msgid "Our conferences"
+#~ msgstr "Nos conférences"
 
 #~ msgid "UX Deiz conferences"
 #~ msgstr "Conférences UX Deiz"
