@@ -617,6 +617,27 @@ acf_add_local_field_group(array (
 			'toolbar' => 'basic',
 			'media_upload' => 0,
 		),
+		array (
+			'key' => 'field_57168d1835b93',
+			'label' => 'Encart Ulule',
+			'name' => 'uxr_ulule',
+			'type' => 'textarea',
+			'instructions' => 'Cet encart sera affiché sur la home s\'il est contribué.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'new_lines' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
 	),
 	'location' => array (
 		array (

@@ -136,8 +136,6 @@
 	//
 	&-about 
 	{
-		
-		padding-bottom: smash-size($smash-lh*8);
 		background-image: image-url('about-bg.jpg');
 		background-size: cover;
 		
@@ -151,15 +149,73 @@
 			background-position: 100% 100%;
 		}
 		
-		@include mq($until: desktop)
+		&_content 
 		{
-			padding-top: smash-size($smash-lh*3);
+			@include mq($until: tablet)
+			{
+				padding-top: smash-size($smash-lh*3);
+			}
+
+			@include mq(tablet)
+			{
+				display: table;
+				width: 100%;
+				table-layout: fixed; 
+				
+				> *
+				{
+					display: table-cell;
+					padding-top: smash-size($smash-lh*4);
+					vertical-align: top;
+				}
+			}
 		}
 		
-		@include mq(desktop)
+		
+
+		&_intro 
 		{
-			padding-top: smash-size($smash-lh*4);
+			padding-bottom: smash-size($smash-lh*8);
+
+			@include mq($until: tablet)
+			{
+				padding-bottom: smash-size($smash-lh*3);
+			}
+
+			@include mq(tablet)
+			{
+				padding-right: smash-size($smash-gutter*2);
+				
+				
+				&:only-child 
+				{
+					padding-right: 0;
+				}
+			}
 		}
+
+		&_extra 
+		{
+			background-color: $white;
+			
+			@include mq($until: tablet)
+			{
+				$margin: $smash-gutter*2;
+				@include smash-calc('width', '100% + #{$margin}');
+				margin-right: smash-size($smash-gutter*-1);
+				margin-left: smash-size($smash-gutter*-1);
+				padding: smash-size($smash-lh*2) smash-size($smash-gutter);
+			}
+			
+			@include mq(tablet)
+			{
+				width: smash-size(380px);
+				padding-right: smash-size($smash-gutter);
+				padding-left: smash-size($smash-gutter);
+			}
+		}
+		
+		
 		
 		> *,
 		.#{$smash-prefix}-contrib > *
