@@ -179,11 +179,14 @@ $event_date = date_i18n('Y-m-d', $time_d);
 						endif;
 
 						// Talk speaker name
-						if ($speakers_name) :
+						//if ($speakers_name) :
 							
-							$uxr_speaker_name = array_values($speakers_name)[0];
+							//$uxr_speaker_name = array_values($speakers_name)[0];
+						// 	echo '<pre>';
+						// 	print_r($speakers_name);
+						// 	echo '</pre>';
 
-						endif;
+						// endif;
 
 					endif;
 
@@ -209,14 +212,28 @@ $event_date = date_i18n('Y-m-d', $time_d);
 					if (isset($uxr_talk_title) && !empty($uxr_talk_title)) : ?>
 					<h2 class="uxr-event_talk-title">
 						<?php echo wp_kses($uxr_talk_title, array()); ?>
-						<?php if (isset($uxr_speaker_name) && !empty($uxr_speaker_name)) : ?>
+						<?php if (isset($speakers_name) && !empty($speakers_name)) : ?>
 						<span>
 							<?php _e('by', 'uxrennes'); ?>
-							<?php echo $uxr_speaker_name; ?>
+							<?php 
+
+								$speaker_total_count = count($speakers_name);
+								$speaker_count = 0;
+
+								foreach ($speakers_name as $speaker) :
+
+									if ($speaker_count == $speaker_total_count - 1 && $speaker_count != 0) echo __(' and ', 'uxrennes');
+									elseif ($speaker_count > 0 ) echo ', '; 
+
+									echo $speaker;
+									$speaker_count++;
+								endforeach;
+
+							?>
 						</span>
 						<?php endif; ?>
 					</h2>
-					<?php if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter)) : ?>
+					<?php if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter) && $uxr_speaker_twitter != '1') : ?>
 					<p class="uxr-event_speaker-twitter">
 						<a href="<?php echo esc_url($uxr_speaker_twitter); ?>" target="_blank">
 							<?php echo '@'. $uxr_speaker_twitter_nickname; ?>

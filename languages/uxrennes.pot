@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: UX Rennes\n"
-"POT-Creation-Date: 2016-02-28 17:24+0100\n"
+"POT-Creation-Date: 2016-04-19 22:32+0200\n"
 "PO-Revision-Date: 2016-01-30 15:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -56,17 +56,17 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:118
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:54
+#: header.php:98
 msgid ""
 "You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
 "browsehappy.com/\">upgrade your browser</a> to improve your experience.</p>"
 msgstr ""
 
-#: header.php:62
+#: header.php:106
 msgid "Skip to content"
 msgstr ""
 
@@ -309,35 +309,48 @@ msgstr ""
 msgid "Edit %s"
 msgstr ""
 
-#: template-parts/content-events.php:68 template-parts/content-home.php:321
+#: template-parts/content-events.php:67
+#: template-parts/content-home-afterwork.php:211
+#: template-parts/content-home-uxdeiz.php:322
 msgid "RSVP on Meetup"
 msgstr ""
 
-#: template-parts/content-events.php:113
+#: template-parts/content-events.php:114
 msgid "Conference transcript"
 msgstr ""
 
-#: template-parts/content-events.php:115
+#: template-parts/content-events.php:116
 msgid "Evening program"
 msgstr ""
 
-#: template-parts/content-events.php:213 template-parts/content-home.php:192
+#: template-parts/content-events.php:214
+#: template-parts/content-home-uxdeiz.php:193
 msgid "by"
 msgstr ""
 
-#: template-parts/content-events.php:303
+#: template-parts/content-events.php:304
 msgid "Links and resources"
 msgstr ""
 
-#: template-parts/content-events.php:377
+#: template-parts/content-events.php:378
 msgid "Thanks to our sponsors"
 msgstr ""
 
-#: template-parts/content-home.php:311
+#: template-parts/content-home-afterwork.php:106
+msgid "Previous event"
+msgstr ""
+
+#: template-parts/content-home-afterwork.php:110
+msgid "Next event"
+msgstr ""
+
+#: template-parts/content-home-uxdeiz.php:312
+#: template-parts/content-home-uxdeiz.php:452
+#: template-parts/content-home.php:105
 msgid "Read the recap"
 msgstr ""
 
-#: template-parts/content-home.php:346
+#: template-parts/content-home-uxdeiz.php:347
 msgid "See on Google Maps"
 msgstr ""
 
