@@ -36,7 +36,13 @@
 			margin-bottom: 0;
 		}
 
-		
+		@include mq(phablet)
+		{
+			&-speaker 
+			{
+				white-space: nowrap;	
+			}
+		}
 		
 		@include mq(tablet)
 		{
@@ -52,10 +58,7 @@
 				padding-left: smash-size($smash-gutter/2, 'em');
 			}
 
-			&-speaker 
-			{
-				white-space: nowrap;	
-			}
+			
 		}
 
 		&-title 

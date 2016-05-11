@@ -137,6 +137,9 @@ if ($query->have_posts()) :
 							$speakers_ID		= [];
 							$speakers_name		= [];
 
+							// Talk picture
+							$uxr_talk_photo		= get_post_meta($talk_ID, 'uxr_talk_photo', true);
+
 							if ( $talk_speakers != null ) :
 								
 								foreach( $talk_speakers as $talk_speaker ) :
@@ -176,23 +179,37 @@ if ($query->have_posts()) :
 							// Talk speaker picture
 							if ( $talk_speakers != null ) :
 
-								if (isset($uxr_speaker_picture) && !empty($uxr_speaker_picture)) :
+								$speacker_pic_counter = 0;
 
-									// Get speaker meta
-									$speaker_ID				= $speaker->term_id;
-									$speaker_name 			= $speaker->name;
+								if (isset($uxr_talk_photo) && !empty($uxr_talk_photo)) :
 
-									// Talk speaker picture ID
-									$uxr_speaker_picture 	= get_option($taxonomy . '_' . $speaker_ID . '_uxr_speaker_picture', true); // talk_speakers_7_uxr_speaker_picture
+								?>
+								<p class="uxr-next-event_talk-picture">
+									<?php echo wp_get_attachment_image($uxr_talk_photo, 'uxr_speaker_medium'); ?>
+								</p>
+								<?php
 
-									if (isset($uxr_speaker_picture) && !empty($uxr_speaker_picture)) :
+								else :
 
-							?>
-							<p class="uxr-next-event_talk-picture">
-								<?php echo wp_get_attachment_image($uxr_speaker_picture, 'uxr_speaker_medium'); ?>
-							</p>
-							<?php 
-									endif;
+									foreach( $talk_speakers as $speaker ) :
+
+										// Get speaker meta
+										$speaker_ID				= $speaker->term_id;
+										$speaker_name 			= $speaker->name;
+
+										// Talk speaker picture ID
+										$uxr_speaker_picture 	= get_option($taxonomy . '_' . $speaker_ID . '_uxr_speaker_picture', true); // talk_speakers_7_uxr_speaker_picture
+
+										if (isset($uxr_speaker_picture) && !empty($uxr_speaker_picture) && $speacker_pic_counter == 0) :
+
+								?>
+								<p class="uxr-next-event_talk-picture">
+									<?php echo wp_get_attachment_image($uxr_speaker_picture, 'uxr_speaker_medium'); ?>
+								</p>
+								<?php 
+										endif;
+
+									endforeach;
 
 								endif;
 
