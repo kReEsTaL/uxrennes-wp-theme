@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: UX Rennes\n"
-"POT-Creation-Date: 2016-04-19 22:32+0200\n"
+"POT-Creation-Date: 2016-05-11 07:48+0200\n"
 "PO-Revision-Date: 2016-01-30 15:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -58,6 +58,14 @@ msgstr ""
 
 #: functions.php:118
 msgid "Sidebar"
+msgstr ""
+
+#: functions.php:376
+msgid "Theme options"
+msgstr ""
+
+#: functions.php:377
+msgid "Options"
 msgstr ""
 
 #: header.php:98
@@ -310,8 +318,8 @@ msgid "Edit %s"
 msgstr ""
 
 #: template-parts/content-events.php:67
-#: template-parts/content-home-afterwork.php:211
-#: template-parts/content-home-uxdeiz.php:322
+#: template-parts/content-home-afterwork.php:240
+#: template-parts/content-home-uxdeiz.php:385
 msgid "RSVP on Meetup"
 msgstr ""
 
@@ -323,34 +331,37 @@ msgstr ""
 msgid "Evening program"
 msgstr ""
 
-#: template-parts/content-events.php:214
-#: template-parts/content-home-uxdeiz.php:193
+#: template-parts/content-events.php:217
 msgid "by"
 msgstr ""
 
-#: template-parts/content-events.php:304
+#: template-parts/content-events.php:225
+#: template-parts/content-home-uxdeiz.php:235
+msgid " and "
+msgstr ""
+
+#: template-parts/content-events.php:321
 msgid "Links and resources"
 msgstr ""
 
-#: template-parts/content-events.php:378
+#: template-parts/content-events.php:395
 msgid "Thanks to our sponsors"
 msgstr ""
 
-#: template-parts/content-home-afterwork.php:106
+#: template-parts/content-home-afterwork.php:103
 msgid "Previous event"
 msgstr ""
 
-#: template-parts/content-home-afterwork.php:110
+#: template-parts/content-home-afterwork.php:107
 msgid "Next event"
 msgstr ""
 
-#: template-parts/content-home-uxdeiz.php:312
-#: template-parts/content-home-uxdeiz.php:452
-#: template-parts/content-home.php:105
+#: template-parts/content-home-uxdeiz.php:375
+#: template-parts/content-previous-events.php:105
 msgid "Read the recap"
 msgstr ""
 
-#: template-parts/content-home-uxdeiz.php:347
+#: template-parts/content-home-uxdeiz.php:410
 msgid "See on Google Maps"
 msgstr ""
 
@@ -379,6 +390,10 @@ msgstr ""
 #: template-parts/content-page.php:21 template-parts/content-single.php:25
 #: template-parts/content.php:34
 msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-previous-events.php:39
+msgid "Our UX conferences"
 msgstr ""
 
 #: template-parts/content.php:27

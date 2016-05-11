@@ -138,6 +138,7 @@ if ($query->have_posts()) :
 							$speakers_name		= [];
 
 							if ( $talk_speakers != null ) :
+								
 								foreach( $talk_speakers as $talk_speaker ) :
 									$speakers_ID[] 		= $talk_speaker->term_id;
 									$speakers_name[] 	= $talk_speaker->name;
@@ -145,41 +146,57 @@ if ($query->have_posts()) :
 							endif;
 
 							// Get first speaker ID
-							if ($speakers_ID) :
+							//if ($speakers_ID) :
 								
 								// Talk speaker ID
-								$speaker_ID 					= array_values($speakers_ID)[0];
+								//$speaker_ID 					= array_values($speakers_ID)[0];
 
-								// Talk speaker picture ID
-								$uxr_speaker_picture 			= get_option($taxonomy . '_' . $speaker_ID . '_uxr_speaker_picture', true); // talk_speakers_7_uxr_speaker_picture
+								// // Talk speaker picture ID
+								// $uxr_speaker_picture 			= get_option($taxonomy . '_' . $speaker_ID . '_uxr_speaker_picture', true); // talk_speakers_7_uxr_speaker_picture
 
-								// Talk speaker Twitter URL
-								$uxr_speaker_twitter 			= get_option($taxonomy . '_' . $speaker_ID . '_uxr_speaker_twitter', true);
+								// // Talk speaker Twitter URL
+								// $uxr_speaker_twitter 			= get_option($taxonomy . '_' . $speaker_ID . '_uxr_speaker_twitter', true);
 
-								if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter)) :
-									$uxr_speaker_twitter_nickname 	= str_replace('https://twitter.com/', 		'', $uxr_speaker_twitter);
-									$uxr_speaker_twitter_nickname 	= str_replace('https://www.twitter.com/', 	'', $uxr_speaker_twitter_nickname);
-									$uxr_speaker_twitter_nickname 	= str_replace('http://twitter.com/', 		'', $uxr_speaker_twitter_nickname);
-									$uxr_speaker_twitter_nickname 	= str_replace('http://www.twitter.com/', 	'', $uxr_speaker_twitter_nickname);
-								endif;
+								// if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter)) :
+								// 	$uxr_speaker_twitter_nickname 	= str_replace('https://twitter.com/', 		'', $uxr_speaker_twitter);
+								// 	$uxr_speaker_twitter_nickname 	= str_replace('https://www.twitter.com/', 	'', $uxr_speaker_twitter_nickname);
+								// 	$uxr_speaker_twitter_nickname 	= str_replace('http://twitter.com/', 		'', $uxr_speaker_twitter_nickname);
+								// 	$uxr_speaker_twitter_nickname 	= str_replace('http://www.twitter.com/', 	'', $uxr_speaker_twitter_nickname);
+								// endif;
 
 								// Talk speaker name
-								if ($speakers_name) :
+								// if ($speakers_name) :
 									
-									$uxr_speaker_name = array_values($speakers_name)[0];
+								// 	$uxr_speaker_name = array_values($speakers_name)[0];
 
-								endif;
+								// endif;
 
-							endif;
+							//endif;
 
 							// Talk speaker picture
-							if (isset($uxr_speaker_picture) && !empty($uxr_speaker_picture)) :
+							if ( $talk_speakers != null ) :
+
+								if (isset($uxr_speaker_picture) && !empty($uxr_speaker_picture)) :
+
+									// Get speaker meta
+									$speaker_ID				= $speaker->term_id;
+									$speaker_name 			= $speaker->name;
+
+									// Talk speaker picture ID
+									$uxr_speaker_picture 	= get_option($taxonomy . '_' . $speaker_ID . '_uxr_speaker_picture', true); // talk_speakers_7_uxr_speaker_picture
+
+									if (isset($uxr_speaker_picture) && !empty($uxr_speaker_picture)) :
 
 							?>
 							<p class="uxr-next-event_talk-picture">
 								<?php echo wp_get_attachment_image($uxr_speaker_picture, 'uxr_speaker_medium'); ?>
 							</p>
-							<?php endif;
+							<?php 
+									endif;
+
+								endif;
+
+							endif;
 
 
 							// Talk title
@@ -189,16 +206,61 @@ if ($query->have_posts()) :
 								<strong>
 									<?php echo wp_kses($uxr_talk_title, array('br' => array())); ?>
 								</strong>
-								<?php if (isset($uxr_speaker_name) && !empty($uxr_speaker_name)) : ?>
-								<span>
-									<?php _e('by', 'uxrennes'); ?>
-									<?php echo $uxr_speaker_name; ?>
-								</span>
-								<?php endif; ?>
+								<?php 
+
+									// Speakers
+									if ( $talk_speakers != null ) :
+
+										// Counters
+										$speaker_total_count = count($talk_speakers);
+										$speaker_count = 0;
+
+										foreach( $talk_speakers as $speaker ) :
+
+											$speaker_ID		= $speaker->term_id;
+											$speaker_name 	= $speaker->name;
+
+											// Talk speaker Twitter URL
+											$uxr_speaker_twitter 			= get_option($taxonomy . '_' . $speaker_ID . '_uxr_speaker_twitter', true);
+
+											if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter)) :
+												$uxr_speaker_twitter_nickname 	= str_replace('https://twitter.com/', 		'', $uxr_speaker_twitter);
+												$uxr_speaker_twitter_nickname 	= str_replace('https://www.twitter.com/', 	'', $uxr_speaker_twitter_nickname);
+												$uxr_speaker_twitter_nickname 	= str_replace('http://twitter.com/', 		'', $uxr_speaker_twitter_nickname);
+												$uxr_speaker_twitter_nickname 	= str_replace('http://www.twitter.com/', 	'', $uxr_speaker_twitter_nickname);
+											endif;
+
+											// Insert comma or "and"
+											if ($speaker_count > 0 ) :
+												if ($speaker_count == $speaker_total_count - 1) : echo ' ' . __('and', 'uxrennes') . ' ';
+												else : echo ', '; 
+												endif;
+											endif;
+
+											// Insert Twitter link
+											if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter) && $uxr_speaker_twitter != '1') :
+												echo '<a href="' . esc_url($uxr_speaker_twitter) .'" target="_blank">';
+											endif;
+
+											// Display speaker name
+											echo '<span class="uxr-next-event_talk-speaker">' . $speaker_name . '</span>';
+
+											// Close Twitter link
+											if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter) && $uxr_speaker_twitter != '1') :
+												echo '</a>';
+											endif;
+
+											$speaker_count++;
+
+										endforeach;
+
+									endif;
+
+								?>
 							</h2>
 							<?php endif;
 
-							if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter)) : 
+							/*if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter) && $uxr_speaker_twitter != '1') :
 
 							?>
 							<p class="uxr-next-event_speaker-twitter">
@@ -208,7 +270,7 @@ if ($query->have_posts()) :
 							</p>
 							<?php
 
-							endif;
+							endif;*/
 
 						endwhile;
 
@@ -379,3 +441,5 @@ endif;
 wp_reset_query();
 
 ?>
+
+<?php get_template_part('template-parts/content-home', 'about'); ?>

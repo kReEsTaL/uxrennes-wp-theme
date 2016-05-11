@@ -19,7 +19,7 @@
 		a 
 		{
 			color: inherit;
-			@include background-image(linear-gradient(rgba(#000,0) 98%, rgba($white,1) 98%));
+			//@include background-image(linear-gradient(rgba(#000,0) 98%, rgba($white,1) 98%));
 			
 			&:focus,
 			&:hover,

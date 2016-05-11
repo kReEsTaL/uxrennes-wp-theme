@@ -35,6 +35,8 @@
 		{
 			margin-bottom: 0;
 		}
+
+		
 		
 		@include mq(tablet)
 		{
@@ -49,7 +51,11 @@
 			{
 				padding-left: smash-size($smash-gutter/2, 'em');
 			}
-			
+
+			&-speaker 
+			{
+				white-space: nowrap;	
+			}
 		}
 
 		&-title 
@@ -58,7 +64,7 @@
 			font-weight: bold;
 			color: $black;
 			
-			> * 
+			> *:first-child
 			{
 				display: block;
 			}
@@ -155,6 +161,7 @@
 		a 
 		{
 			background-image: none;
+			border: 0;
 			
 			&:after 
 			{
@@ -163,7 +170,9 @@
 
 			span 
 			{
-				@include background-image(linear-gradient(rgba(#000,0) 98%, $red 98%));
+				color: $red;
+				border-bottom: 1px solid; 
+				//@include background-image(linear-gradient(rgba(#000,0) 98%, $red 98%));
 			}
 
 			&:focus,
@@ -172,7 +181,7 @@
 			{
 				span 
 				{
-					background-image: none;	
+					border-bottom-color: transparent;
 				}
 			}
 		}
