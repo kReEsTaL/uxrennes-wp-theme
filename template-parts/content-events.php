@@ -212,34 +212,69 @@ $event_date = date_i18n('Y-m-d', $time_d);
 					if (isset($uxr_talk_title) && !empty($uxr_talk_title)) : ?>
 					<h2 class="uxr-event_talk-title">
 						<?php echo wp_kses($uxr_talk_title, array()); ?>
-						<?php if (isset($speakers_name) && !empty($speakers_name)) : ?>
-						<span>
-							<?php _e('by', 'uxrennes'); ?>
-							<?php 
+						<?php 
 
-								$speaker_total_count = count($speakers_name);
+							// Speakers
+							if ( $talk_speakers != null ) :
+
+								echo '<span>';
+
+								// Counters
+								$speaker_total_count = count($talk_speakers);
 								$speaker_count = 0;
 
-								foreach ($speakers_name as $speaker) :
+								foreach( $talk_speakers as $speaker ) :
 
-									if ($speaker_count == $speaker_total_count - 1 && $speaker_count != 0) echo __(' and ', 'uxrennes');
-									elseif ($speaker_count > 0 ) echo ', '; 
+									$speaker_ID		= $speaker->term_id;
+									$speaker_name 	= $speaker->name;
 
-									echo $speaker;
+									// Talk speaker Twitter URL
+									$uxr_speaker_twitter 			= get_option($taxonomy . '_' . $speaker_ID . '_uxr_speaker_twitter', true);
+
+									if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter)) :
+										$uxr_speaker_twitter_nickname 	= str_replace('https://twitter.com/', 		'', $uxr_speaker_twitter);
+										$uxr_speaker_twitter_nickname 	= str_replace('https://www.twitter.com/', 	'', $uxr_speaker_twitter_nickname);
+										$uxr_speaker_twitter_nickname 	= str_replace('http://twitter.com/', 		'', $uxr_speaker_twitter_nickname);
+										$uxr_speaker_twitter_nickname 	= str_replace('http://www.twitter.com/', 	'', $uxr_speaker_twitter_nickname);
+									endif;
+
+									// Insert comma or "and"
+									if ($speaker_count > 0 ) :
+										if ($speaker_count == $speaker_total_count - 1) : echo ' ' . __('and', 'uxrennes') . ' ';
+										else : echo ', '; 
+										endif;
+									endif;
+
+									// Insert Twitter link
+									if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter) && $uxr_speaker_twitter != '1') :
+										echo '<a href="' . esc_url($uxr_speaker_twitter) .'" target="_blank">';
+									endif;
+
+									// Display speaker name
+									echo '<span class="uxr-next-event_talk-speaker">' . $speaker_name . '</span>';
+
+									// Close Twitter link
+									if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter) && $uxr_speaker_twitter != '1') :
+										echo '</a>';
+									endif;
+
 									$speaker_count++;
+
 								endforeach;
 
-							?>
-						</span>
-						<?php endif; ?>
+								echo '</span>';
+
+							endif;
+
+						?>
 					</h2>
-					<?php if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter) && $uxr_speaker_twitter != '1') : ?>
+					<?php /*if (isset($uxr_speaker_twitter) && !empty($uxr_speaker_twitter) && $uxr_speaker_twitter != '1') : ?>
 					<p class="uxr-event_speaker-twitter">
 						<a href="<?php echo esc_url($uxr_speaker_twitter); ?>" target="_blank">
 							<?php echo '@'. $uxr_speaker_twitter_nickname; ?>
 						</a>
 					</p>
-					<?php endif; ?>
+					<?php endif;*/ ?>
 					<?php endif; ?>
 
 					<?php 
@@ -247,13 +282,30 @@ $event_date = date_i18n('Y-m-d', $time_d);
 					// 
 					// TALK SPEAKER PICTURE
 					//
-					if (isset($uxr_speaker_picture) && !empty($uxr_speaker_picture)) :
+					// Talk picture
+					$uxr_talk_photo		= get_post_meta($talk_ID, 'uxr_talk_photo', true);
+
+					if (isset($uxr_talk_photo) && !empty($uxr_talk_photo)) :
+
+					?>
+					<p class="uxr-next-event_talk-picture">
+						<?php echo wp_get_attachment_image($uxr_talk_photo, 'uxr_speaker_medium'); ?>
+					</p>
+					<?php
+
+					else :
+
+						if (isset($uxr_speaker_picture) && !empty($uxr_speaker_picture)) :
 
 					?>
 					<p class="uxr-next-event_talk-picture">
 						<?php echo wp_get_attachment_image($uxr_speaker_picture, 'uxr_speaker_medium'); ?>
 					</p>
-					<?php endif;
+					<?php 
+
+						endif;
+
+					endif;
 
 					//
 					// TALK TRANSCRIPT
