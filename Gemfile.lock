@@ -48,6 +48,3 @@ DEPENDENCIES
   oily_png (~> 1.1.0)
   sass (= 3.4.14)
   sass-globbing (= 1.1.1)
-
-BUNDLED WITH
-   1.10.6
